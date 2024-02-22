@@ -8,8 +8,10 @@ console.log ('Hello, Peep')
 
 // alert(`Всё верно? ${nameUser} ${surnameUser} ${ageUser}`)
 
-// console.log ('я этого тайпскрипта рот ебал!!!!')
 
 type Euro = number|string
 const euro: Euro = 0.927582 
 
+// function(onClick: number) {
+//   var button_name = ClickedElement.textContent
+// }
