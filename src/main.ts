@@ -11,13 +11,5 @@ console.log ('Hello, Peep')
 // console.log ('я этого тайпскрипта рот ебал!!!!')
 
 type Euro = number|string
-let did = ('Укажите количество Долларов')
 const euro: Euro = 0.927582 
-const dollars = parseInt(prompt('did', 25))
-let message = euro*dollars 
-function conventure(message:number) {
-  console.log (message)
-}
-console.log (message)
 
-alert(message)
