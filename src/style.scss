@@ -1,6 +1,83 @@
-div {
-  background-color: black;
-  width: 100px;
-  height: 100px;
-  margin: 50px auto;
+body {
+  background-color: rgb(25, 25, 25);
+  .top {
+    color: red;
+  }
+  .bottom {
+    color: green;
+  }
+  #main {
+    background-color: rgb(15, 15, 15);
+    color: azure;
+    width: 400px;
+    height: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 20px;
+    border: 3px solid azure;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+    text-transform: capitalize;
+    flex-direction: column;
+    gap: 40px;
+    #text {
+      margin: 0;
+    }
+    #uerg {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      padding: 20px;
+      text-align: center;
+    }
+    .conv {
+      padding: 20px;
+      margin: 10px;
+      padding: 10px;
+      text-transform: uppercase;
+      border: 2px azure solid;
+      border-radius: 15px;
+      background-color: rgb(20, 20, 20);
+      .empty {
+        border: 2px orange solid;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 15px;
+        background-color: rgb(25, 25, 25);
+        color: azure;
+      }
+    }
+    #conv {
+      background-color: rgb(20, 20, 20);
+      height: 250px;
+      width: 250px;
+      padding: 20px;
+      border: 2px azure solid;
+      border-radius: 20px;
+    }
+  input {
+    margin: 15px;
+    padding: 5px;
+    border: 2px orange solid;
+    border-radius: 5px;
+    transition: 0.25s;
+  }
+  input:hover {
+    box-shadow: 0px 3px 10px orange;
+    transition: 0.25s;
+  }
+  button {
+    padding: 5px 5px;
+    border-radius: 5px;
+    border: 2px orange solid;
+    margin: 15px;
+    transition: 0.25s;
+  }
+  button:hover {
+    scale: 1.1;
+    box-shadow: 0px 0px 10px orange;
+    transition: 0.25s;
+  }
+}
 }
