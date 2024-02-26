@@ -1,6 +1,6 @@
 import "./style.scss";
 
-console.log("Hello, Peep");
+console.log ("Hello, Peep");
 
 // const nameUser = prompt(' Укажите ваше Имя')
 // const surnameUser = prompt(' Укажите вашу Фамилию')
@@ -8,7 +8,11 @@ console.log("Hello, Peep");
 
 // alert(`Всё верно? ${nameUser} ${surnameUser} ${ageUser}`)
 interface myObj {
-  [key: string]: { Value: number; Previous: number };
+  [key: string]: { Value: number; Previous: number; Valute:string };
+}
+
+interface Element {
+  [key: string]: { resl:number; cerv:number; select:number };
 }
 // console.log ('я этого тайпскрипта рот ебал!!!!')
 const rates: myObj = {};
@@ -18,6 +22,13 @@ const elementEUR = document.querySelector('[data-value="EUR"]');
 
 const elementGBP = document.querySelector('[data-value="GBP"]');
 getCurrent();
+
+const cerv = document.querySelector('#cerv') 
+const resl = document.querySelector('#resl')
+const select = document.querySelector('#select')
+
+// if (!select || !resl || !cerv)
+//     throw new Error("Не найден элемент, соси хуй!");
 
 async function getCurrent() {
   if (!elementEUR || !elementGBP || !elementUSD)
@@ -48,8 +59,19 @@ async function getCurrent() {
   elementGBP.textContent = rates.GBP.Value.toFixed(2);
 
   if (rates.USD.Value > rates.USD.Previous) {
-    elementUSD?.classList.add("top");
+    elementUSD.classList.add("top");
   } else {
-    elementUSD?.classList.add("bottom");
+    elementUSD.classList.add("bottom");
   }
 }
+
+cerv.oninput = function(){
+  console.log('changed');
+  resl.value = (rates.USD.Value / rates.EUR.Value).toFixed(2);
+}
+
+// resl.oninput = function(){
+//   console.log('changed');
+// }
+
+console.log('Николай помогите мне, я мягко говоря не совсем понимаю этот js со статической типизацией он меня даже больше бесит чем помогает работать')

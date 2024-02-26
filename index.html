@@ -24,10 +24,21 @@
         </div>
       </div>
       <div id="conv">
-        <input type="number" id="doll" name="dollar" placeholder=" 25" />
-        <input type="number" id="eur" name="euro" />
+        <select  id="select">
+          <option>RUB</option>
+          <!-- <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option> -->
+        </select>
+        <input type="number" id="cerv" name="dollar" data-value="Current"/>
+        <select id="select">
+          <!-- <option value="USD">USD</option> -->
+          <option value="EUR">EUR</option>
+          <!-- <option value="GBP">GBP</option> -->
+        </select>
+        <input type="number" id="resl" name="euro" data-value="Result"/>
         <br />
-        <button>Converted</button>
+        <button onclick="click">Converted</button>
       </div>
       <h1 id="text">converted center</h1>
     </div>
