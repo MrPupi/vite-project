@@ -56,28 +56,28 @@ body {
       border: 2px azure solid;
       border-radius: 20px;
     }
-  input {
-    margin: 15px;
-    padding: 5px;
-    border: 2px orange solid;
-    border-radius: 5px;
-    transition: 0.25s;
+    input {
+      margin: 15px;
+      padding: 5px;
+      border: 2px orange solid;
+      border-radius: 5px;
+      transition: 0.25s;
+    }
+    input:hover {
+      box-shadow: 0px 3px 10px orange;
+      transition: 0.25s;
+    }
+    button {
+      padding: 5px 5px;
+      border-radius: 5px;
+      border: 2px orange solid;
+      margin: 15px;
+      transition: 0.25s;
+    }
+    button:hover {
+      scale: 1.1;
+      box-shadow: 0px 0px 10px orange;
+      transition: 0.25s;
+    }
   }
-  input:hover {
-    box-shadow: 0px 3px 10px orange;
-    transition: 0.25s;
-  }
-  button {
-    padding: 5px 5px;
-    border-radius: 5px;
-    border: 2px orange solid;
-    margin: 15px;
-    transition: 0.25s;
-  }
-  button:hover {
-    scale: 1.1;
-    box-shadow: 0px 0px 10px orange;
-    transition: 0.25s;
-  }
-}
 }
