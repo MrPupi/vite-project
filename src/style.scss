@@ -88,3 +88,16 @@ div {
     color: green;
   }
 }
+.snake {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  height: max-content;
+  #game {
+    // width: 608px;
+    // height: 608px;
+    margin: 50 auto;
+    box-shadow: 0 0 20px red;
+  }
+}
