@@ -116,7 +116,7 @@ function direction(event) {
   else if (event.keyCode == 83 && dir != "up") dir = "down";
 }
 
-let game = setInterval(snakeGame, 100);
+let game = setInterval(snakeGame, 125);
 
 function snakeGame() {
   ctx.drawImage(ground, 0, 0);
@@ -143,11 +143,10 @@ function snakeGame() {
       // console.log('по идее должна расти')
     };
   } else {
-    // snake.pop();
-    console.log('соси хуй, она не выростет!')
+    snake.pop();
   }
   
-  snake.pop();
+  
 
   if (dir == "left") snakeX -= box;
   if (dir == "right") snakeX += box;
@@ -161,3 +160,17 @@ function snakeGame() {
 
   snake.unshift(newHead)
 }
+
+
+// далее идет домашка по javascript ifelse
+// и так практика 1
+ 
+// let age = parseInt(prompt('Сколько вам лет','') as string)
+
+// if (age >= 14 && age <= 90) {
+//   age = alert('У вас осталось достаточно времени!')
+// } else {
+//   age = alert('Вы на палке о двух концах!')
+// }
+
+// практика 2 ifelse
