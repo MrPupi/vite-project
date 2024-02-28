@@ -173,4 +173,34 @@ function snakeGame() {
 //   age = alert('Вы на палке о двух концах!')
 // }
 
-// практика 2 ifelse
+// практика 2 переменные
+ 
+// let name = 'John'
+// let admin = name
+// alert(admin)
+
+// практика 3 переменные?
+
+// let earth = 'Earth'
+// let userName = ; 
+
+// практика 4 переменные!!! рудимент
+// alert('Давайте вычислим ваш возраст')
+
+// let yearsOld = parseInt(prompt('В каком году вы родились? ', '2011') as string) as number  
+// let monthOld = prompt('В каком месяце вы родились? ', '9') рудимент
+// let dayOld = prompt('В какой день вы родились? ', '11') рудимент
+
+// let birthday = [dayOld, monthOld, yearsOld] рудимент
+
+// let realYearsOld = ( 2024 - yearsOld )
+// console.log(realYearsOld)
+
+// alert(realYearsOld)
+
+// и так ifelse
+
+prompt('Введите число','')
+
+
+
