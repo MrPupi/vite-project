@@ -116,7 +116,7 @@ function direction(event): any | number {
   else if (event.keyCode == 83 && dir != "up") dir = "down";
 }
 
-let game = setInterval(snakeGame, 125);
+let game = setInterval(snakeGame, 85);
 
 function snakeGame() {
   ctx.drawImage(ground, 0, 0);
@@ -262,3 +262,57 @@ function snakeGame() {
 
 // ifelse 4 
 
+// function validateTime( hours: number, minutes: number, second: number ): boolean {
+//   if(hours<0 || hours>23 || minutes<0 || minutes>59 || second<0 || second>59) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+// function userGlobalTime() {
+//   const hours = parseInt(prompt('Введите часы (0-23)' || '0', '10')as string)as number;
+//   const minutes = parseInt(prompt('Введите минуты (0-59) ','')as string)as number;
+//   const second = parseInt(prompt('Введите секунды (0-59) ','')as string)as number
+//   if(validateTime(hours, minutes, second)){
+//     console.log(`Введенно корректное время ${hours}:${minutes}:${second}`);
+//   } else {
+//     console.log('Введенно некорректное время')
+//   }
+// }
+
+// userGlobalTime();
+
+// ifelse 5
+
+
+
+// факториал введенного пользователем числа
+
+// const factorialUser = parseInt(prompt('Введите число','')as string)as number
+// let factorial = 1;
+// let i: number = 1
+// while (i <= factorialUser) {
+//   factorial = factorial * i;
+//   ++i
+// }
+
+// console.log(`Факториал числа ${factorialUser} равен ${factorial}`)
+
+// while 1 #
+
+// const userCechteg = parseFloat(prompt('Введите число','')as string)as number
+// let i = 0
+// while (i < userCechteg) {
+//   console.log('#')
+//   ++i
+// }
+
+// while 2 012345
+
+// const userNumber = parseFloat(prompt('Введите число','')as string)as number
+// let i = 0
+// while ( i <= userNumber) {
+//   let valueNull = isNaN(i) ? 0 : i++
+//   console.log(valueNull)
+// }
