@@ -74,9 +74,9 @@ cerv.oninput = function () {
 //   console.log('changed');
 // }
 
-console.log(
-  "Николай помогите мне, я мягко говоря не совсем понимаю этот js со статической типизацией он меня даже больше бесит чем помогает работать"
-);
+// console.log(
+//   "Николай помогите мне, я мягко говоря не совсем понимаю этот js со статической типизацией он меня даже больше бесит чем помогает работать"
+// );
 
 // ЭТО ЗМЕЙКА
 // Следуйте дальше и увидите больше!!!
@@ -225,7 +225,7 @@ function snakeGame() {
 
 // ifelse 2
 
-// const userYearsOld: number | null = parseFloat(prompt('Введите ваш возраст','85')as string ) as number 
+// const userYearsOld: number | null = parseFloat(prompt('Введите ваш возраст','85')as string ) as number
 
 // if (userYearsOld > 120) {
 //  alert('Невероятно, а как вы живы?')
@@ -255,12 +255,12 @@ function snakeGame() {
 //     alert(`Модуль числа ${number} равен ${valueUserNumber}`)
 //   } else {
 //     console.log('Введите корректное число')
-//   } 
+//   }
 // } else {
 //   console.log('Ну серьёзно не бесите введите число!')
 // }
 
-// ifelse 4 
+// ifelse 4
 
 // function validateTime( hours: number, minutes: number, second: number ): boolean {
 //   if(hours<0 || hours>23 || minutes<0 || minutes>59 || second<0 || second>59) {
@@ -284,8 +284,6 @@ function snakeGame() {
 // userGlobalTime();
 
 // ifelse 5
-
-
 
 // факториал введенного пользователем числа
 
@@ -316,3 +314,153 @@ function snakeGame() {
 //   let valueNull = isNaN(i) ? 0 : i++
 //   console.log(valueNull)
 // }
+
+//  switch времена года
+
+// let month: string = prompt("Введите месяц", "") as string;
+
+// switch (month) {
+//   case 'January':
+//     console.log("Сейчас Январь");
+//     break;
+//   case 'February':
+//     console.log("Сейчас Февраль");
+//     break;
+//   case 'March':
+//     console.log("Сейчас Март");
+//     break;
+//   case 'April':
+//     console.log("Сейчас Апрель");
+//     break;
+//   case 'May':
+//     console.log("Сейчас Май");
+//     break;
+//   case 'June':
+//     console.log("Сейчас Июнь");
+//     break;
+//   case 'July':
+//     console.log("Сейчас Июль");
+//     break;
+//   case 'August':
+//     console.log("Сейчас Август");
+//     break;
+//   case 'September':
+//     console.log("Сейчас Сентябрь");
+//     break;
+//   case 'October':
+//     console.log("Сейчас Октябрь");
+//     break;
+//   case 'November':
+//     console.log("Сейчас Ноябрь");
+//     break;
+//   case 'December':
+//     console.log("Сейчас Декабрь");
+//     break;
+// }
+
+// switch calculater
+
+// let num1 = prompt("Введите первое число", "") as unknown as number;
+// let num2 = prompt("Введите второе число", "") as unknown as number;
+// let operation = prompt("Введите операцию", "") as string;
+
+// switch (operation) {
+//   case "+":
+//     console.log(+num1 + +num2);
+//     break;
+//   case "-":
+//     console.log(+num1 - +num2);
+//     break;
+//   case "*":
+//     console.log(+num1 * +num2);
+//     break;
+//   case "/":
+//     console.log(+num1 / +num2);
+//     break;
+//   case "**":
+//     console.log((+num1) ** +num2);
+//     break;
+//   case "%":
+//     console.log(+num1 % +num2);
+//     break;
+//   default:
+// }
+
+// тернарный оператор(плюсом сделал через ifelse) <>
+
+// let num1: number = parseInt(prompt('Введите первое число','55')as string )as number
+// let num2: number = parseInt(prompt('Введите второе число','65')as string )as number
+
+// num1 > num2 ? console.log(num1) : console.log(num2)
+
+// if (num2 > num1) {
+//   console.log(num2)
+// } else {
+//   console.log(num1)
+// }
+
+// тернарный оператор остаток от деления или же число кратное 5
+
+// let userNumber: number = parseInt(prompt('Введите число:')as string)as number
+
+// userNumber % 5 === 0 ? console.log('Число кратно 5') : console.log('Число не кратно 5')
+
+// тернарный оператор "землянин, иношапатянин"
+
+// let urPlaceOnGalaxy = prompt('На какой планете вы живете?: ')as string
+
+// urPlaceOnGalaxy.toLowerCase() === 'земля' ? console.log('Приветствую Землянин!') : console.log('Приветствую Иношапатянин');
+
+// координаты х у по четвертям 
+
+// const x = parseFloat(prompt('Введите координату x: ')as string)
+// const y = parseFloat(prompt('Введите координату y: ')as string)
+
+//     if (x === 0 && y === 0) {
+//       console.log('Точка находится в начале координат');
+//     } else if (x === 0) {
+//       console.log('Точка находится на оси Y');
+//     } else if (y === 0) {
+//       console.log('Точка находится на оси X');
+//     } else if (x > 0 && y > 0) {
+//       console.log('Точка находится в первой четверти');
+//     } else if (x < 0 && y > 0) {
+//       console.log('Точка находится во второй четверти');
+//     } else if (x < 0 && y < 0) {
+//       console.log('Точка находится в третьей четверти');
+//     } else {
+//       console.log('Точка находится в четвертой четверти');
+//     }
+
+// while 1
+
+// let value = parseInt(prompt('Введите число повторений ')as string)as number
+// let i = 0
+
+// while(i<value) {
+//   console.log('#')
+//   ++i
+// }
+
+// while 2
+
+// let valueUser = parseInt(prompt('Введите число ')as string)as number
+// let i = valueUser
+
+// while(0 <= i) {
+//   console.log(i)
+//   --i
+// }
+
+//  while 3
+
+let number = parseInt(prompt('Введите число ')as string)as number
+let upper = parseInt(prompt('Введите степень ')as string)as number
+
+while(number ** upper) {
+  const numberUpper = number ** upper
+  alert(`Число ${number} в ${upper} степени равно ${numberUpper}`)
+  break
+}
+
+// 
