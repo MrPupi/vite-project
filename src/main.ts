@@ -411,7 +411,7 @@ function snakeGame() {
 
 // urPlaceOnGalaxy.toLowerCase() === 'земля' ? console.log('Приветствую Землянин!') : console.log('Приветствую Иношапатянин');
 
-// координаты х у по четвертям 
+// координаты х у по четвертям
 
 // const x = parseFloat(prompt('Введите координату x: ')as string)
 // const y = parseFloat(prompt('Введите координату y: ')as string)
@@ -454,13 +454,79 @@ function snakeGame() {
 
 //  while 3
 
-let number = parseInt(prompt('Введите число ')as string)as number
-let upper = parseInt(prompt('Введите степень ')as string)as number
+// let number = parseInt(prompt('Введите число ')as string)as number
+// let upper = parseInt(prompt('Введите степень ')as string)as number
 
-while(number ** upper) {
-  const numberUpper = number ** upper
-  alert(`Число ${number} в ${upper} степени равно ${numberUpper}`)
-  break
-}
+// while(number ** upper) {
+//   const numberUpper = number ** upper
+//   alert(`Число ${number} в ${upper} степени равно ${numberUpper}`)
+//   break
+// }
 
-// 
+// while 4 вот тут пришлось жопой попотеть 
+
+// function findSomeThing(a:number, b:number): number[] {
+//   const massive: number[] = [];
+  
+//   let smaal = Math.min(a, b);
+
+  
+  
+//   let i = 1;
+
+//   while (i <= smaal) {
+//     if (a % i === 0 && b % i === 0) {
+//       massive.push(i);
+//     } 
+//      ++i
+//   }
+  
+//   return massive;
+  
+// }
+
+//   let num1 = parseInt(prompt("Введите число ") as string) as number;
+//   let num2 = parseInt(prompt("Введите число ") as string) as number;
+
+// const finallyFind = findSomeThing(num1, num2);
+
+// console.log(`Общие делители чисел ${num1} и ${num2}: ${finallyFind.join(', ')}`);
+
+// while 5
+
+// const userFactorial =  parseInt(prompt("Введите число факториала ") as string) as number;
+// let factorial = 1;
+// let i = 1;
+
+// while(i <= userFactorial) {
+//    factorial = factorial * i
+//    i++
+//   }
+
+//   console.log(`Сумма факториала из ${userFactorial} равна: ${factorial}`)
+
+// do while 1
+
+// let allin: number = 2 + (2 * 2)
+
+// do {
+//   allin = parseInt(prompt(`Сколько равняется выражение: '2 + 2 * 2'? Введите ответ: 8, 4 или 6`, '')as string)as number
+// } while (allin !== 6);
+
+// console.log('Вы правы');
+
+// do while 2 
+
+// let oneTauzend: number = 1000
+// let delenie: number = oneTauzend
+// let count = 0;
+
+// do {
+//   delenie = (delenie / 2)
+//   let i = delenie
+//   count++
+//   console.log(i)
+// } while(delenie >= 50);
+
+// console.log(`Полученное число меньше 50: ${delenie}`);
+// console.log(`Количество делений: ${count}`);
