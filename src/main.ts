@@ -25,7 +25,7 @@ getCurrent();
 
 const cerv: any = document.querySelector("#cerv");
 const resl: any = document.querySelector("#resl");
-const select: any = document.querySelector("#select");
+// const select: any = document.querySelector("#select");
 const optionsel: any = document.querySelector("#option");
 
 // if (!select || !resl || !cerv)
@@ -530,3 +530,40 @@ function snakeGame() {
 
 // console.log(`Полученное число меньше 50: ${delenie}`);
 // console.log(`Количество делений: ${count}`);
+
+// function 1
+
+
+let num1 = 10
+let num2 = 20
+
+type numstr = number | string
+
+function sum( num1:numstr, num2:numstr ):numstr {
+  
+  num1 =  10
+  num2 = 20
+  // if ( a > b ) {
+    //   return a
+    //   console.log(a)
+    // } else { 
+      //   return b
+      //   console.log(b)
+      // }
+      return num1 > num2? num1 : num2
+    }
+    
+    
+    
+    console.log(function sum(num1:numstr , num2:numstr):numstr)
+   
+
+  
+
+
+
+// function 2
+
+// function sum2(a: number, b: number): number {
+//   return a - b;
+// }
