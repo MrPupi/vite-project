@@ -11,9 +11,9 @@ interface myObj {
   [key: string]: { Value: number; Previous: number; Valute: string };
 }
 
-interface Element {
-  [key: string]: { resl: any; cerv: any; select: any };
-}
+// interface Element {
+//   [key: string]: { resl: any; cerv: any; select: any };
+// }
 // console.log ('я этого тайпскрипта рот ебал!!!!')
 const rates: myObj = {};
 const elementUSD = document.querySelector('[data-value="USD"]');
@@ -94,6 +94,8 @@ let box = 32;
 
 let score = 0;
 
+let game = setInterval(snakeGame, 85);
+
 let food = {
   x: Math.floor(Math.random() * 17 + 1) * box,
   y: Math.floor(Math.random() * 15 + 2) * box,
@@ -109,14 +111,13 @@ document.addEventListener("keydown", direction);
 
 let dir: any;
 
-function direction(event): any | number {
+function direction(event): any {
   if (event.keyCode == 65 && dir != "right") dir = "left";
   else if (event.keyCode == 87 && dir != "down") dir = "up";
   else if (event.keyCode == 68 && dir != "left") dir = "right";
   else if (event.keyCode == 83 && dir != "up") dir = "down";
 }
 
-let game = setInterval(snakeGame, 85);
 
 function snakeGame() {
   ctx.drawImage(ground, 0, 0);
@@ -534,36 +535,55 @@ function snakeGame() {
 // function 1
 
 
-let num1 = 10
-let num2 = 20
+// let num1 = 10
+// let num2 = 20
 
-type numstr = number | string
+// type numstr = number | string
 
-function sum( num1:numstr, num2:numstr ):numstr {
+// function sum( num1:numstr, num2:numstr ):numstr {
   
-  num1 =  10
-  num2 = 20
-  // if ( a > b ) {
-    //   return a
-    //   console.log(a)
-    // } else { 
-      //   return b
-      //   console.log(b)
-      // }
-      return num1 > num2? num1 : num2
-    }
+//   num1 =  10
+//   num2 = 20
+//   if ( num1 > num2 ) {
+//       return num1
+//       console.log(num1)
+//     } else { 
+//         return num2
+//         console.log(num2)
+//       }                                                         это zombiecod
+//       return num1 > num2? num1 : num2
+//     }
     
     
     
-    console.log(function sum(num1:numstr , num2:numstr):numstr)
+//     console.log(function sum(num1:numstr , num2:numstr):numstr)
    
 
   
-
-
-
-// function 2
-
-// function sum2(a: number, b: number): number {
-//   return a - b;
+// let num1 = 10;
+// let num2 = 20;
+// type numstr = number | string;
+// function sum(num1: numstr, num2: numstr): numstr {
+//   if (typeof num1 === 'string' || typeof num2 === 'string') {
+//     return 'Ошибка: оба аргумента должны быть числами';
+//   }
+  
+//   if (num1 > num2) {
+//     console.log(num1);
+//     return num1;
+//   } else {
+//     // console.log(num2);
+//     return num2;
+//   }
 // }
+
+// console.log(sum(num1, num2));
+
+
+// рекурсивные функции 1234
+
+
+function getReversedNumber(n: number): any {
+  if()
+}
+
