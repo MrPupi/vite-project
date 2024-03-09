@@ -118,7 +118,6 @@ function direction(event): any {
   else if (event.keyCode == 83 && dir != "up") dir = "down";
 }
 
-
 function snakeGame() {
   ctx.drawImage(ground, 0, 0);
 
@@ -464,26 +463,24 @@ function snakeGame() {
 //   break
 // }
 
-// while 4 вот тут пришлось жопой попотеть 
+// while 4 вот тут пришлось жопой попотеть
 
 // function findSomeThing(a:number, b:number): number[] {
 //   const massive: number[] = [];
-  
+
 //   let smaal = Math.min(a, b);
 
-  
-  
 //   let i = 1;
 
 //   while (i <= smaal) {
 //     if (a % i === 0 && b % i === 0) {
 //       massive.push(i);
-//     } 
+//     }
 //      ++i
 //   }
-  
+
 //   return massive;
-  
+
 // }
 
 //   let num1 = parseInt(prompt("Введите число ") as string) as number;
@@ -516,7 +513,7 @@ function snakeGame() {
 
 // console.log('Вы правы');
 
-// do while 2 
+// do while 2
 
 // let oneTauzend: number = 1000
 // let delenie: number = oneTauzend
@@ -534,32 +531,27 @@ function snakeGame() {
 
 // function 1
 
-
 // let num1 = 10
 // let num2 = 20
 
 // type numstr = number | string
 
 // function sum( num1:numstr, num2:numstr ):numstr {
-  
+
 //   num1 =  10
 //   num2 = 20
 //   if ( num1 > num2 ) {
 //       return num1
 //       console.log(num1)
-//     } else { 
+//     } else {
 //         return num2
 //         console.log(num2)
 //       }                                                         это zombiecod
 //       return num1 > num2? num1 : num2
 //     }
-    
-    
-    
-//     console.log(function sum(num1:numstr , num2:numstr):numstr)
-   
 
-  
+//     console.log(function sum(num1:numstr , num2:numstr):numstr)
+
 // let num1 = 10;
 // let num2 = 20;
 // type numstr = number | string;
@@ -567,7 +559,7 @@ function snakeGame() {
 //   if (typeof num1 === 'string' || typeof num2 === 'string') {
 //     return 'Ошибка: оба аргумента должны быть числами';
 //   }
-  
+
 //   if (num1 > num2) {
 //     console.log(num1);
 //     return num1;
@@ -579,11 +571,85 @@ function snakeGame() {
 
 // console.log(sum(num1, num2));
 
-
 // рекурсивные функции 1234
 
+// function getReversedNumber(n: number): any {
+//   if()
+// }
 
-function getReversedNumber(n: number): any {
-  if()
+// цикл for 1
+
+// Вывести все числа от 1 до 100, которые кратные указанному
+// пользователем числу.
+
+// let i = 0;
+// let numberMassive: number[] = []
+// let userNumber = parseInt(prompt('Введите число от 1 до 100 ','20')as string )as number
+
+// for(i = 1; i <= 100; i++ ) {
+//   if(i % userNumber === 0) {
+//      numberMassive.push(i)
+//   } else {
+//     console.warn('Тут ошибка Сеньор Разработчик')
+//   }
+// }
+
+// // numberMassive.forEach((element) => {
+// // console.log(element)                  смотрел в чем была ошибка
+// // оказывается я написал вместо массива шаг и переменную i
+// // })
+
+// console.log(`Числа кратные числу ${userNumber} это ${numberMassive}`)
+
+// цикл for 2
+
+// Вывести каждый 4-й элемент из указанного пользователем
+// диапазона. Пользователь указывает минимальное и мак-
+// симальное значения диапазона.
+
+// let userInputMax = parseInt(prompt('Введите максимальный диапазон','')as string)as number
+// let userInputMin = parseInt(prompt('Введите минимальный диапазон','')as string)as number
+
+// недоделанно
+
+// цикл for 3
+
+// Запросить число и проверить, простое ли оно. Простое
+// число делится без остатка только на себя и на единицу.
+
+let userInputNumber = parseInt(
+  prompt("Введите число ", "") as string
+) as number;
+let i = 0;
+let delenie = userInputNumber;
+let count = 0;
+
+for (i = 1; i <= delenie; count++) {
+  if (i % userInputNumber > 1) {
+    console.log('Первый')
+    console.log('Число сложное')
+    console.log(userInputNumber);
+    break
+  } 
+  else if (i % userInputNumber === 0) {
+    console.log('Двойка')
+    console.log('Число простое')
+    console.log(userInputNumber)
+    break
+  }
+  else if (delenie % userInputNumber <= 1) {
+    console.log('Тройка')
+    console.log('Число простое')
+    console.log(userInputNumber)
+    break
+  }
+  else if (delenie % userInputNumber === 0 || i % userInputNumber === 0) {
+    console.log('Четверка')
+    console.log('Число сложное')
+    console.log(userInputNumber)
+    break
+  }
+  break
 }
 
+// короче я устал разбираться в логике этого скрипта  
