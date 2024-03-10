@@ -1,0 +1,38 @@
+{
+    "git.autofetch": true,
+    "editor.minimap.enabled": false,
+    "files.autoSave": "onFocusChange",
+    "codeium.enableConfig": {
+      "*": true,
+      "ignore": true
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.enableSmartCommit": true,
+    "[scss]": {
+      "editor.defaultFormatter": "stylelint.vscode-stylelint"
+    },
+    "git.confirmSync": false,
+    "cSpell.language": "en,ru",
+    "workbench.settings.applyToAllProfiles": [
+      "eslint.enable"
+    ],
+    "explorer.confirmDelete": false,
+    "codeium.enableCodeLens": false,
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  }
