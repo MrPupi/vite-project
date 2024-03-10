@@ -1,6 +1,6 @@
-import "./style.scss";
+import './style.scss';
 
-console.log("Hello, Peep");
+console.log('Hello, Peep');
 
 // const nameUser = prompt(' Укажите ваше Имя')
 // const surnameUser = prompt(' Укажите вашу Фамилию')
@@ -23,18 +23,22 @@ const elementEUR = document.querySelector('[data-value="EUR"]');
 const elementGBP = document.querySelector('[data-value="GBP"]');
 getCurrent();
 
-const cerv: any = document.querySelector("#cerv");
-const resl: any = document.querySelector("#resl");
+const cerv: HTMLInputElement = document.querySelector(
+  '#cerv'
+) as HTMLInputElement;
+const resl: HTMLInputElement = document.querySelector(
+  '#resl'
+) as HTMLInputElement;
 // const select: any = document.querySelector("#select");
-const optionsel: any = document.querySelector("#option");
+const optionSel = document.querySelector('#select1') as HTMLSelectElement;
 
 // if (!select || !resl || !cerv)
 //     throw new Error("Не найден элемент, соси хуй!");
 
 async function getCurrent() {
   if (!elementEUR || !elementGBP || !elementUSD)
-    throw new Error("Не найден элемент, соси хуй!");
-  const responsive = await fetch("https://www.cbr-xml-daily.ru/daily_json.js");
+    throw new Error('Не найден элемент, соси хуй!');
+  const responsive = await fetch('https://www.cbr-xml-daily.ru/daily_json.js');
   const data = await responsive.json();
   const result = await data;
   // console.log(result)
@@ -60,14 +64,16 @@ async function getCurrent() {
   elementGBP.textContent = rates.GBP.Value.toFixed(2);
 
   if (rates.USD.Value > rates.USD.Previous) {
-    elementUSD.classList.add("top");
+    elementUSD.classList.add('top');
   } else {
-    elementUSD.classList.add("bottom");
+    elementUSD.classList.add('bottom');
   }
 }
 
 cerv.oninput = function () {
-  resl.value = (cerv.value / rates[optionsel.value].Value).toFixed(2);
+  if (isNaN(Number(cerv.value)) || !optionSel?.value) return;
+  resl.value = (Number(cerv.value) / rates[optionSel.value].Value).toFixed(2);
+  
 };
 
 // resl.oninput = function(){
@@ -81,55 +87,62 @@ cerv.oninput = function () {
 // ЭТО ЗМЕЙКА
 // Следуйте дальше и увидите больше!!!
 
-const canvas: any = document.getElementById("game");
-const ctx = canvas.getContext("2d");
+const canvas: HTMLCanvasElement | null = document.getElementById(
+  'game'
+) as HTMLCanvasElement;
+const ctx = canvas.getContext('2d');
 
 const ground = new Image();
-ground.src = "./ground.png";
+ground.src = './ground.png';
 
 const foodImg = new Image();
-foodImg.src = "./food.png";
+foodImg.src = './food.png';
 
-let box = 32;
+const box = 32;
 
 let score = 0;
 
-let game = setInterval(snakeGame, 85);
+// let game = setInterval(snakeGame, 85);
+
+// function setInterval() {
+//   let game = setInterval(snakeGame, 85);
+// }
 
 let food = {
   x: Math.floor(Math.random() * 17 + 1) * box,
-  y: Math.floor(Math.random() * 15 + 2) * box,
+  y: Math.floor(Math.random() * 15 + 2) * box
 };
 
-let snake: any[] = [];
+const snake: { x: number; y: number }[] = [];
 snake[0] = {
   x: 9 * box,
-  y: 10 * box,
+  y: 10 * box
 };
 
-document.addEventListener("keydown", direction);
+document.addEventListener('keydown', direction);
 
-let dir: any;
+let dir: string;
 
-function direction(event): any {
-  if (event.keyCode == 65 && dir != "right") dir = "left";
-  else if (event.keyCode == 87 && dir != "down") dir = "up";
-  else if (event.keyCode == 68 && dir != "left") dir = "right";
-  else if (event.keyCode == 83 && dir != "up") dir = "down";
+function direction(event: KeyboardEvent) {
+  if (event.code == '65' && dir != 'right') dir = 'left';
+  else if (event.keyCode == 87 && dir != 'down') dir = 'up';
+  else if (event.keyCode == 68 && dir != 'left') dir = 'right';
+  else if (event.keyCode == 83 && dir != 'up') dir = 'down';
 }
 
 function snakeGame() {
+  if (!ctx) return;
   ctx.drawImage(ground, 0, 0);
 
   ctx.drawImage(foodImg, food.x, food.y);
 
   for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? "red" : "brown";
+    ctx.fillStyle = i == 0 ? 'red' : 'brown';
     ctx.fillRect(snake[i].x, snake[i].y, box, box);
   }
-  ctx.fillStyle = "white";
-  ctx.font = "50px Arial";
-  ctx.fillText(score, box * 2.5, box * 1.7);
+  ctx.fillStyle = 'white';
+  ctx.font = '50px Arial';
+  ctx.fillText(score.toString(), box * 2.5, box * 1.7);
 
   let snakeX = snake[0].x;
   let snakeY = snake[0].y;
@@ -138,7 +151,7 @@ function snakeGame() {
     score++;
     food = {
       x: Math.floor(Math.random() * 17 + 1) * box,
-      y: Math.floor(Math.random() * 15 + 2) * box,
+      y: Math.floor(Math.random() * 15 + 2) * box
 
       // console.log('по идее должна расти')
     };
@@ -146,18 +159,19 @@ function snakeGame() {
     snake.pop();
   }
 
-  if (dir == "left") snakeX -= box;
-  if (dir == "right") snakeX += box;
-  if (dir == "up") snakeY -= box;
-  if (dir == "down") snakeY += box;
+  if (dir == 'left') snakeX -= box;
+  if (dir == 'right') snakeX += box;
+  if (dir == 'up') snakeY -= box;
+  if (dir == 'down') snakeY += box;
 
-  let newHead = {
+  const newHead = {
     x: snakeX,
-    y: snakeY,
+    y: snakeY
   };
 
   snake.unshift(newHead);
 }
+snakeGame();
 
 // далее идет домашка по javascript ifelse
 // и так практика 1
@@ -617,39 +631,36 @@ function snakeGame() {
 // Запросить число и проверить, простое ли оно. Простое
 // число делится без остатка только на себя и на единицу.
 
-let userInputNumber = parseInt(
-  prompt("Введите число ", "") as string
+const userInputNumber = parseInt(
+  prompt('Введите число ', '') as string
 ) as number;
 let i = 0;
-let delenie = userInputNumber;
+const delenie = userInputNumber;
 let count = 0;
 
 for (i = 1; i <= delenie; count++) {
   if (i % userInputNumber > 1) {
-    console.log('Первый')
-    console.log('Число сложное')
+    console.log('Первый');
+    console.log('Число сложное');
     console.log(userInputNumber);
-    break
-  } 
-  else if (i % userInputNumber === 0) {
-    console.log('Двойка')
-    console.log('Число простое')
-    console.log(userInputNumber)
-    break
+    break;
+  } else if (i % userInputNumber === 0) {
+    console.log('Двойка');
+    console.log('Число простое');
+    console.log(userInputNumber);
+    break;
+  } else if (delenie % userInputNumber <= 1) {
+    console.log('Тройка');
+    console.log('Число простое');
+    console.log(userInputNumber);
+    break;
+  } else if (delenie % userInputNumber === 0 || i % userInputNumber === 0) {
+    console.log('Четверка');
+    console.log('Число сложное');
+    console.log(userInputNumber);
+    break;
   }
-  else if (delenie % userInputNumber <= 1) {
-    console.log('Тройка')
-    console.log('Число простое')
-    console.log(userInputNumber)
-    break
-  }
-  else if (delenie % userInputNumber === 0 || i % userInputNumber === 0) {
-    console.log('Четверка')
-    console.log('Число сложное')
-    console.log(userInputNumber)
-    break
-  }
-  break
+  break;
 }
 
-// короче я устал разбираться в логике этого скрипта  
+// короче я устал разбираться в логике этого скрипта
