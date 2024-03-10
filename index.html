@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,29 +24,28 @@
         </div>
       </div>
       <div id="conv">
-        <select  id="select">
+        <select id="select">
           <option>RUB</option>
           <!-- <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option> -->
-            <input type="number" id="cerv" name="dollar" data-value="Current"/>
+          <input type="number" id="cerv" name="dollar" data-value="Current" />
         </select>
-        <select id="select">
-        <option id="option" value="USD">USD</option>
-        <option id="option" value="EUR">EUR</option>
-        <option id="option" value="GBP">GBP</option>
-        <input type="number" id="resl" name="euro" data-value="Result"/>
+        <select id="select1">
+          <option id="option" value="USD">USD</option>
+          <option id="option1" value="EUR">EUR</option>
+          <option id="option2" value="GBP">GBP</option>
+          <input type="number" id="resl" name="euro" data-value="Result" />
         </select>
         <br />
         <button onclick="click">Converted</button>
       </div>
       <h1 id="text">converted center</h1>
     </div>
-    
+
     <div class="snake">
       <canvas id="game" width="608" height="608" margin="50px auto"></canvas>
     </div>
-    
 
     <script type="module" src="/src/main.ts"></script>
   </body>
