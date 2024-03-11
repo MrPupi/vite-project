@@ -789,6 +789,9 @@ snakeGame();
 // const minUserNumbers = parseInt(
 //   prompt('Введите минимальный диапазон', '') as string
 // ) as number;
+// const count = parseInt(
+//   prompt('Введите тип чисел', '') as string
+// ) as number;
 
 // // function getTrueOrFalseNumbers(minUserNumbers: number, maxUserNumbers: number) {
 // //   for (let i = minUserNumbers; i <= maxUserNumbers; i++) {
@@ -807,30 +810,160 @@ snakeGame();
 
 // // getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers);
 
-// // пока не додумался как решить эту задачку, думаю пора отдохнуть чуть позже доделаю 
+// // пока не додумался как решить эту задачку, думаю пора отдохнуть чуть позже доделаю
+
+// Написать функцию, которая выводит все четные или не-
+// четные числа, в указанном пользователем диапазоне. Какие
+// числа выводить, определяется третьим параметром типа
+// boolean (true – четные, false – нечетные).
+
+//       /\
+//      /  \
+//     /    \
+//    /      \
+//   /        \
+//  /          \
+// /!!доделано!!\
+
+// let i = 0;
 
 // function getTrueOrFalseNumbers(minUserNumbers: number, maxUserNumbers: number) {
-//   for (let i = minUserNumbers; i <= maxUserNumbers; i++) {
-//     const numbers: boolean | number[] = [] as const;
+//   for (i = minUserNumbers; i <= maxUserNumbers; i++) {
+//     const numbs: number[] = [] as const;
 
-//     // if ((true || false) && i % 2 === 0) {
-//     //   if (i % 2 === 0) {
-//     //     numbers.push(i);
-//     //     console.log(numbers[0]);
-//     //   }
-//     // } else {
-//     //   continue;
-//     // }
+//     if (minUserNumbers % 2 == 0 && maxUserNumbers % 2 == 0 && count === 1) {
+//       if (i % 2 == 0) {
+//         numbs.push(i);
+//         console.log(numbs[0]);
+//       }
+//     } 
 
-//     if ((true || false) && i % 1 === 0) {
-//       if (i % 2 === 0) {
-//         numbers.push(i);
-//         console.log(numbers[0]);
+//     if (minUserNumbers % 1 == 0 && maxUserNumbers % 1 == 0 && count === 0) {
+//       if (i % 1 == 0 && i % 2 != 0) {
+//         numbs.push(i);
+//         console.log(numbs[0]);
 //       }
 //     } else {
-//       continue;
+//       continue
 //     }
 //   }
 // }
 
-// getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers);
+// console.log(getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers));
+
+// я не совсем понимаю пока что как мне сравнивать между собой 5 чисел но попробуем
+// надо запросить 5 чисел и сравнить их значения затем вывести значение большего из них
+
+// const num1 = parseInt(prompt('Введите первое число', '')as string)as number;
+// const num2 = parseInt(prompt('Введите второе число', '')as string)as number;
+// const num3 = parseInt(prompt('Введите третье число', '')as string)as number;
+// const num4 = parseInt(prompt('Введите четвертое число', '')as string)as number;
+// const num5 = parseInt(prompt('Введите пятое число', '')as string)as number;
+
+//   function comparison(num1: number, num2: number, num3: number, num4: number, num5: number) {
+//     if (num1 > num2 && num1 > num3 && num1 > num4 && num1 > num5) {
+//       console.log(num1);
+//     } else if (num2 > num1 && num2 > num3 && num2 > num4 && num2 > num5) {
+//       console.log(num2);
+//     } else if (num3 > num1 && num3 > num2 && num3 > num4 && num3 > num5) {
+//       console.log(num3)
+//     } else if (num4 > num1 && num4 > num2 && num4 > num3 && num4 > num5) {
+//       console.log(num4);
+//     } else {
+//       console.log(num5);
+//     }
+//   }
+
+//   comparison(num1, num2, num3, num4, num5);
+
+// ну вот и разобрался
+
+// const num1 = parseInt(prompt('Введите первое число', '')as string)as number;
+// const num2 = parseInt(prompt('Введите второе число', '')as string)as number;
+// const num3 = parseInt(prompt('Введите третье число', '')as string)as number;
+// const num4 = parseInt(prompt('Введите четвертое число', '')as string)as number;
+// const num5 = parseInt(prompt('Введите пятое число', '')as string)as number;
+
+// function addition(num1:number, num2:number, num3:number, num4:number, num5:number) {
+//   return num1 + num2 + num3 + num4 + num5
+// }
+
+// console.log(addition(num1, num2, num3, num4, num5));
+
+// ну это совсем простенький счетчик времени и даты
+// проверку на корректность данный я доделаю после
+// сейчас хочу добить четные и нечетные числа
+
+// function validateTime( hours: number, minutes: number, second: number ): boolean {
+//   if(hours<0 || hours>23 || minutes<0 || minutes>59 || second<0 || second>59) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+// function userGlobalTime() {
+//   const hours = parseInt(prompt('Введите часы (0-23)' || '0', '10')as string)as number;
+//   const minutes = parseInt(prompt('Введите минуты (0-59) ','')as string)as number;
+//   const second = parseInt(prompt('Введите секунды (0-59) ','')as string)as number
+//   if(validateTime(hours, minutes, second)){
+//     console.log(`Введено корректное время ${hours}:${minutes}:${second}`);
+//   } else {
+//     console.log('Введено некорректное время')
+//   }
+// }
+
+// userGlobalTime();
+
+// function validateDate(day: number, month: number, year: number): boolean {
+//   if(day<=0 || day>31 || month<=0 || month>12 || year<1902 || year>2024) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+
+// function userGlobalDate() {
+//   let day = parseInt(prompt('Введите день (1-31) ','')as string)as number;
+//   const month = parseInt(prompt('Введите месяц (1-12) ','')as string)as number;
+//   const year = parseInt(prompt('Введите год (1902-2024) ','')as string)as number;
+//   if (validateDate(day, month, year)) {
+//     day++
+//     console.log(`Ваше время днем в будущем ${day}.${month}.${year}`);
+//     day--
+//     day--
+//     console.log(`Ваше время днем в прошлом ${day}.${month}.${year}`);
+//   } else {
+//     console.log('Введено некорректное время')
+//   }
+
+// }
+
+// userGlobalDate()
+
+// Написать функцию, которая реализует работу оператора %.
+// Функция принимает 2 параметра и возвращает остаток от
+// деления первого параметра на второй. В функции использовать только + - * /, оператор % не использовать.
+
+// осталось доделать только это задание
+
+// все что снизу это следующее что на готовке
+
+// Во всех заданиях обязательно использовать рекурсию.
+// 1
+// Написать функцию, которая вычисляет факториал заданного числа.
+// 2
+// Написать функцию, которая выводит все числа из заданного
+// пользователем диапазона в прямом порядке. И еще одну
+// функцию – для вывода в обратном порядке.
+// 3
+// Написать функцию, которая выводит переданное ей число
+// задом наперед.
+// Например: число 1234 вывести как 4321
+// 4
+// Написать функцию, которая считает сумму цифр числа.
+// Например: число 1357, сумма 1 + 3 + 5 + 7 = 16
+// 5
+// Написать функцию, которая принимает число и выводит
+// соответствующее количество вложенных пар круглых скобок.
+// Например: число 4 – (((()))).
