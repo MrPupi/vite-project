@@ -967,3 +967,42 @@ snakeGame();
 // Написать функцию, которая принимает число и выводит
 // соответствующее количество вложенных пар круглых скобок.
 // Например: число 4 – (((()))).
+
+// 1 
+
+const userFactorial = parseInt(prompt('Введите число ')as string)as number
+const subsume = 1
+const factorial = 1
+
+function factorialCalc(factorial: number, subsume: number) {
+  factorial = factorial * subsume
+  if (subsume < userFactorial) {
+    subsume++ 
+    return factorialCalc(factorial, subsume)
+  } 
+  console.log(factorial)
+}
+
+factorialCalc(factorial, subsume)
+
+const userInput = parseInt(prompt('Введите число ')as string)as number
+let trueFactorial = 1
+let i = 0
+
+for (i = 1 ; i <= userInput; i++) {
+  trueFactorial = trueFactorial * i
+  
+}
+
+console.log(trueFactorial)
+
+// if (userInput > 0) {
+//   while (i < userInput) {
+//     console.log('(')
+//     ++i
+//   }
+// } else if (userInput < 0) {
+//   while (i > userInput) {
+//     console.log(')')
+//   }
+// }
