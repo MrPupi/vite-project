@@ -73,7 +73,6 @@ async function getCurrent() {
 cerv.oninput = function () {
   if (isNaN(Number(cerv.value)) || !optionSel?.value) return;
   resl.value = (Number(cerv.value) / rates[optionSel.value].Value).toFixed(2);
-  
 };
 
 // resl.oninput = function(){
@@ -102,12 +101,6 @@ const box = 32;
 
 let score = 0;
 
-// let game = setInterval(snakeGame, 85);
-
-// function setInterval() {
-//   let game = setInterval(snakeGame, 85);
-// }
-
 let food = {
   x: Math.floor(Math.random() * 17 + 1) * box,
   y: Math.floor(Math.random() * 15 + 2) * box
@@ -124,11 +117,13 @@ document.addEventListener('keydown', direction);
 let dir: string;
 
 function direction(event: KeyboardEvent) {
-  if (event.code == '65' && dir != 'right') dir = 'left';
+  if (event.keyCode == 65 && dir != 'right') dir = 'left';
   else if (event.keyCode == 87 && dir != 'down') dir = 'up';
   else if (event.keyCode == 68 && dir != 'left') dir = 'right';
   else if (event.keyCode == 83 && dir != 'up') dir = 'down';
 }
+
+setInterval(snakeGame, 100);
 
 function snakeGame() {
   if (!ctx) return;
@@ -171,6 +166,7 @@ function snakeGame() {
 
   snake.unshift(newHead);
 }
+
 snakeGame();
 
 // далее идет домашка по javascript ifelse
@@ -597,8 +593,8 @@ snakeGame();
 // пользователем числу.
 
 // let i = 0;
-// let numberMassive: number[] = []
-// let userNumber = parseInt(prompt('Введите число от 1 до 100 ','20')as string )as number
+// const numberMassive: number[] = []
+// const userNumber = parseInt(prompt('Введите число от 1 до 100 ','20')as string )as number
 
 // for(i = 1; i <= 100; i++ ) {
 //   if(i % userNumber === 0) {
@@ -608,59 +604,233 @@ snakeGame();
 //   }
 // }
 
-// // numberMassive.forEach((element) => {
-// // console.log(element)                  смотрел в чем была ошибка
-// // оказывается я написал вместо массива шаг и переменную i
-// // })
+// numberMassive.forEach((element) => {
+// console.log(element)
+// //                                   смотрел в чем была ошибка
+// //                           оказывается я написал вместо массива шаг и переменную i
+// })
 
 // console.log(`Числа кратные числу ${userNumber} это ${numberMassive}`)
 
 // цикл for 2
 
 // Вывести каждый 4-й элемент из указанного пользователем
-// диапазона. Пользователь указывает минимальное и мак-
-// симальное значения диапазона.
+// диапазона. Пользователь указывает минимальное и максимальное
+// значения диапазона.
 
-// let userInputMax = parseInt(prompt('Введите максимальный диапазон','')as string)as number
-// let userInputMin = parseInt(prompt('Введите минимальный диапазон','')as string)as number
+// const userInputMax = parseInt(prompt('Введите максимальный диапазон','')as string)as number
+// const userInputMin = parseInt(prompt('Введите минимальный диапазон','')as string)as number
 
-// недоделанно
+// function getNumbers(userInputMin: number, userInputMax: number) {
+//   for (let i = userInputMin; i <= userInputMax; i++) {
+
+//   const numbs: number[] = [] as const
+
+//   if (userInputMin % 4 == 0 && userInputMax % 4 == 0) {
+//     if (i % 4 == 0) {
+//       numbs.push(i)
+//       console.log(numbs[0]);
+//     }
+//   } else {
+//     console.log('Введите корректный диапазон');
+//     break
+//   }
+// }
+// }
+
+// getNumbers(userInputMin, userInputMax)
+
+//       /\
+//      /  \
+//     /    \
+//    /      \
+//   /        \
+//  /          \
+// /!!доделано!!\
 
 // цикл for 3
 
 // Запросить число и проверить, простое ли оно. Простое
 // число делится без остатка только на себя и на единицу.
 
-const userInputNumber = parseInt(
-  prompt('Введите число ', '') as string
-) as number;
-let i = 0;
-const delenie = userInputNumber;
-let count = 0;
+// const userInputNumber = parseInt(
+//   prompt('Введите число ', '') as string
+// ) as number;
 
-for (i = 1; i <= delenie; count++) {
-  if (i % userInputNumber > 1) {
-    console.log('Первый');
-    console.log('Число сложное');
-    console.log(userInputNumber);
-    break;
-  } else if (i % userInputNumber === 0) {
-    console.log('Двойка');
-    console.log('Число простое');
-    console.log(userInputNumber);
-    break;
-  } else if (delenie % userInputNumber <= 1) {
-    console.log('Тройка');
-    console.log('Число простое');
-    console.log(userInputNumber);
-    break;
-  } else if (delenie % userInputNumber === 0 || i % userInputNumber === 0) {
-    console.log('Четверка');
-    console.log('Число сложное');
-    console.log(userInputNumber);
-    break;
-  }
-  break;
-}
+// const i = 0;
 
-// короче я устал разбираться в логике этого скрипта
+// function saveThisSheet(i: number) {
+//   for (i = 0; i < userInputNumber; i++) {
+
+//     const result = userInputNumber % i <= 1;
+
+//     i = 2
+
+//     if (i >= 2) {
+//       if (userInputNumber % i == 0) {
+//         console.log('Число составное');
+//         break;
+//       } else {
+//         console.log('Число простое');
+//         break
+//       }
+//     } else {
+//       console.log(result);
+//     }
+//     console.log(i);
+//     break
+//   }
+// }
+
+// if (userInputNumber % 1 === 0) saveThisSheet(i);
+
+//       /\
+//      /  \
+//     /    \
+//    /      \
+//   /        \
+//  /          \
+// /!!доделано!!\
+
+// const saveUserAgeOld = parseInt(
+//   prompt('Введите число ', '') as string
+// ) as number;
+
+// function setYourAge(saveUserAgeOld: number) {
+//   const age = saveUserAgeOld;
+
+//   if(age >= 14 && age <= 90) {
+//     console.log('У вас осталось достаточно времени!')
+//   } else if (age < 14 || age > 90) {
+//     console.log('Вы на палке о двух концах!')
+//   }
+
+//   console.log(age);
+// }
+
+// setYourAge(saveUserAgeOld);
+
+// for (let i = 0; i <= 10; i++) {
+
+//   if (i % 2 === 0 && i >= 2) {
+//     console.log(i);
+//   } else {
+//     continue
+//   }
+
+// }
+
+// введение в js 4 задания без нумерования все разом
+
+// const i = parseInt(prompt('Введите число ')as string)as number
+// const a = parseInt(prompt('Введите число ')as string)as number
+
+// i > a ? console.log(i) : console.log(a)
+
+// if(i > a) {
+//   console.log(i)
+// } else {
+//   console.log(a)
+// }
+
+// кстати не совсем понял зачем делать функцию
+
+// но раз есть условие то почему бы и нет
+// const i = parseInt(prompt('Введите число ')as string)as number
+// const a = parseInt(prompt('Введите степень ')as string)as number
+
+// while(i) {
+//   const result = i ** a
+//   console.log(result)
+//   break
+// }
+
+// const num1 = prompt("Введите первое число", "") as unknown as number;
+// const num2 = prompt("Введите второе число", "") as unknown as number;
+// const operation = prompt("Введите операцию", "") as string;
+
+// switch (operation) {
+//   case "+":
+//     console.log(+num1 + +num2);
+//     break;
+//   case "-":
+//     console.log(+num1 - +num2);
+//     break;
+//   case "*":
+//     console.log(+num1 * +num2);
+//     break;
+//   case "/":
+//     console.log(+num1 / +num2);
+//     break;
+//   case "**":
+//     console.log((+num1) ** +num2);
+//     break;
+//   case "%":
+//     console.log(+num1 % +num2);
+//     break;
+//   default:
+// }
+
+// если нужно с 2 до 9 вывод таблицы то надо перед условием ifelse переопределить i = 2 а в условии записать как i < 10 то есть без равно
+
+// const userNum = prompt("Введите число", "") as unknown as number;
+
+// function table(userNum: number) {
+//   for (let i = 1; i <= 10; i++) {
+//     console.log(`${userNum} * ${i} = ${userNum * i}`);
+//   }
+// }
+
+// table(userNum)
+
+// const maxUserNumbers = parseInt(
+//   prompt('Введите максимальный диапазон', '') as string
+// ) as number;
+// const minUserNumbers = parseInt(
+//   prompt('Введите минимальный диапазон', '') as string
+// ) as number;
+
+// // function getTrueOrFalseNumbers(minUserNumbers: number, maxUserNumbers: number) {
+// //   for (let i = minUserNumbers; i <= maxUserNumbers; i++) {
+// //     const numbers: boolean | number[] = [] as const;
+
+// //     if (i % 2 === 0) {
+// //       if (i % 2 === 0) {
+// //         numbers.push(i);
+// //         console.log(numbers[0]);
+// //       }
+// //     } else {
+// //       continue;
+// //     }
+// //   }
+// // }
+
+// // getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers);
+
+// // пока не додумался как решить эту задачку, думаю пора отдохнуть чуть позже доделаю 
+
+// function getTrueOrFalseNumbers(minUserNumbers: number, maxUserNumbers: number) {
+//   for (let i = minUserNumbers; i <= maxUserNumbers; i++) {
+//     const numbers: boolean | number[] = [] as const;
+
+//     // if ((true || false) && i % 2 === 0) {
+//     //   if (i % 2 === 0) {
+//     //     numbers.push(i);
+//     //     console.log(numbers[0]);
+//     //   }
+//     // } else {
+//     //   continue;
+//     // }
+
+//     if ((true || false) && i % 1 === 0) {
+//       if (i % 2 === 0) {
+//         numbers.push(i);
+//         console.log(numbers[0]);
+//       }
+//     } else {
+//       continue;
+//     }
+//   }
+// }
+
+// getTrueOrFalseNumbers(minUserNumbers, maxUserNumbers);
