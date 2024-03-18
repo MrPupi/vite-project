@@ -836,7 +836,7 @@ snakeGame();
 //         numbs.push(i);
 //         console.log(numbs[0]);
 //       }
-//     } 
+//     }
 
 //     if (minUserNumbers % 1 == 0 && maxUserNumbers % 1 == 0 && count === 0) {
 //       if (i % 1 == 0 && i % 2 != 0) {
@@ -968,33 +968,33 @@ snakeGame();
 // соответствующее количество вложенных пар круглых скобок.
 // Например: число 4 – (((()))).
 
-// 1 
+// 1
 
-const userFactorial = parseInt(prompt('Введите число ')as string)as number
-const subsume = 1
-const factorial = 1
+// const userFactorial = parseInt(prompt('Введите число ')as string)as number
+// const subsume = 1
+// const factorial = 1
 
-function factorialCalc(factorial: number, subsume: number) {
-  factorial = factorial * subsume
-  if (subsume < userFactorial) {
-    subsume++ 
-    return factorialCalc(factorial, subsume)
-  } 
-  console.log(factorial)
-}
+// function factorialCalc(factorial: number, subsume: number) {
+//   factorial = factorial * subsume
+//   if (subsume < userFactorial) {
+//     subsume++
+//     return factorialCalc(factorial, subsume)
+//   }
+//   console.log(factorial)
+// }
 
-factorialCalc(factorial, subsume)
+// factorialCalc(factorial, subsume)
 
-const userInput = parseInt(prompt('Введите число ')as string)as number
-let trueFactorial = 1
-let i = 0
+// const userInput = parseInt(prompt('Введите число ')as string)as number
+// let trueFactorial = 1
+// let i = 0
 
-for (i = 1 ; i <= userInput; i++) {
-  trueFactorial = trueFactorial * i
-  
-}
+// for (i = 1 ; i <= userInput; i++) {
+//   trueFactorial = trueFactorial * i
 
-console.log(trueFactorial)
+// }
+
+// console.log(trueFactorial)
 
 // if (userInput > 0) {
 //   while (i < userInput) {
@@ -1007,24 +1007,90 @@ console.log(trueFactorial)
 //   }
 // }
 
-// obj 
+// obj
 
 class Point {
-  constructor(public x:number, public y:number) {}
+  constructor(
+    public x: number,
+    public y: number
+  ) {}
 }
 
 class Rectangle {
-  constructor(public top_left: Point, public bottom_right: Point) {}
-   
+  constructor(
+    public top_left: Point,
+    public bottom_right: Point
+  ) {}
+
   getInfo(): void {
-    console.log("Coordinates of the rectangle:");
-    console.log("Top Left: (" + this.top_left.x + ", " + this.top_left.y + ")");
-    console.log("Bottom Right: (" + this.bottom_right.x + ", " + this.bottom_right.y + ")");
+    console.log(
+      'Coordinates of the rectangle: (' +
+        (this.top_left.x + ', ' + this.bottom_right.y) +
+        ')'
+    );
+    console.log('Height of rectangle: (' + this.bottom_right.y + ')');
+    console.log('Width of rectangle: (' + this.top_left.x + ')');
+  }
+
+  getS(): number {
+    return Math.abs(this.bottom_right.y * this.top_left.x);
+  }
+
+  getP(): number {
+    return Math.abs(this.bottom_right.y * 2 + this.top_left.x * 2);
+  }
+
+  // getWidth():number {
+  //  return  Math.abs(this.bottom_right.x - this.top_left.x)
+  // }
+
+  // это ненужный код который я оставил лишь для того что бы показать что я не балбес который ничего не делает
+  // но суть в том что данный блок кода никак не меняет итоговый результат что значит что либо я балбес который ничего не умеет либо то что этот код sheet
+
+  // getHeigth():number {
+    //  return  Math.abs(this.bottom_right.y - this.top_left.y)
+    // }
 }
+  
+  const userChange = prompt('уменьшить или увеличить? ') as string;
+  const userGrafics = prompt('ширина или высота') as string;
+  const userNumber = parseInt(
+  prompt('введите величину изменений') as string
+  ) as number;
+
+
+function getMassiveOfNumbers(
+  userChange: string,
+  userGrafics: string,
+  userNumber: number,
+  rectangle: Rectangle
+  ): number {
+    if (userChange == 'уменьшить') {
+      if (userGrafics == 'ширина') {
+        return Math.abs(rectangle.top_left.x - userNumber);
+      } else if (userGrafics == 'высота') {
+      return Math.abs(rectangle.bottom_right.y - userNumber);
+    }
+  } else if (userChange == 'увеличить') {
+    if (userGrafics == 'высота') {
+      return Math.abs(rectangle.bottom_right.y + userNumber);
+    } else if (userGrafics == 'ширина') {
+      return Math.abs(rectangle.top_left.x + userNumber);
+    }
+  }
 }
 
 const topLeftPoint = new Point(5, 0);
 const bottomRightPoint = new Point(0, 15);
 const rectangle = new Rectangle(topLeftPoint, bottomRightPoint);
 
-rectangle.getInfo()
+console.log(rectangle.getS());
+
+console.log(rectangle.getP());
+
+console.log(getMassiveOfNumbers(userChange, userGrafics, userNumber, rectangle))
+
+// console.log(rectangle.getHeigth())
+// console.log(rectangle.getWidth())
+
+rectangle.getInfo();
