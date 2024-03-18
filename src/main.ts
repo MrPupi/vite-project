@@ -1053,7 +1053,7 @@ class Rectangle {
 }
   
   const userChange = prompt('уменьшить или увеличить? ') as string;
-  const userGrafics = prompt('ширина или высота') as string;
+  const userGrafics = prompt('ширина или высота? ') as string;
   const userNumber = parseInt(
   prompt('введите величину изменений') as string
   ) as number;
@@ -1064,18 +1064,22 @@ function getMassiveOfNumbers(
   userGrafics: string,
   userNumber: number,
   rectangle: Rectangle
-  ): number {
+  ): void {
     if (userChange == 'уменьшить') {
       if (userGrafics == 'ширина') {
         return Math.abs(rectangle.top_left.x - userNumber);
       } else if (userGrafics == 'высота') {
       return Math.abs(rectangle.bottom_right.y - userNumber);
+    } else if (userGrafics == 'ширина и высота') {
+      return Math.abs((rectangle.bottom_right.y - userNumber) || (rectangle.top_left.x - userNumber))
     }
   } else if (userChange == 'увеличить') {
     if (userGrafics == 'высота') {
       return Math.abs(rectangle.bottom_right.y + userNumber);
     } else if (userGrafics == 'ширина') {
       return Math.abs(rectangle.top_left.x + userNumber);
+    } else if (userGrafics == 'ширина и высота') {
+      return Math.abs((rectangle.bottom_right.y + userNumber) || (rectangle.top_left.x + userNumber))
     }
   }
 }
