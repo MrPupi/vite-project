@@ -1006,3 +1006,25 @@ console.log(trueFactorial)
 //     console.log(')')
 //   }
 // }
+
+// obj 
+
+class Point {
+  constructor(public x:number, public y:number) {}
+}
+
+class Rectangle {
+  constructor(public top_left: Point, public bottom_right: Point) {}
+   
+  getInfo(): void {
+    console.log("Coordinates of the rectangle:");
+    console.log("Top Left: (" + this.top_left.x + ", " + this.top_left.y + ")");
+    console.log("Bottom Right: (" + this.bottom_right.x + ", " + this.bottom_right.y + ")");
+}
+}
+
+const topLeftPoint = new Point(5, 0);
+const bottomRightPoint = new Point(0, 15);
+const rectangle = new Rectangle(topLeftPoint, bottomRightPoint);
+
+rectangle.getInfo()
