@@ -1048,40 +1048,42 @@ class Rectangle {
   // но суть в том что данный блок кода никак не меняет итоговый результат что значит что либо я балбес который ничего не умеет либо то что этот код sheet
 
   // getHeigth():number {
-    //  return  Math.abs(this.bottom_right.y - this.top_left.y)
-    // }
+  //  return  Math.abs(this.bottom_right.y - this.top_left.y)
+  // }
 }
-  
-  const userChange = prompt('уменьшить или увеличить? ') as string;
-  const userGrafics = prompt('ширина или высота? ') as string;
-  const userNumber = parseInt(
-  prompt('введите величину изменений') as string
-  ) as number;
 
+const userChange = prompt('уменьшить или увеличить? ') as string;
+const userGrafics = prompt('ширина или высота? ') as string;
+const userNumber = parseInt(
+  prompt('введите величину изменений') as string
+) as number;
 
 function getMassiveOfNumbers(
   userChange: string,
   userGrafics: string,
   userNumber: number,
   rectangle: Rectangle
-  ): void {
-    if (userChange == 'уменьшить') {
-      if (userGrafics == 'ширина') {
-        return Math.abs(rectangle.top_left.x - userNumber);
-      } else if (userGrafics == 'высота') {
+): number {
+  if (userChange == 'уменьшить') {
+    if (userGrafics == 'ширина') {
+      return Math.abs(rectangle.top_left.x - userNumber);
+    } else if (userGrafics == 'высота') {
       return Math.abs(rectangle.bottom_right.y - userNumber);
-    } else if (userGrafics == 'ширина и высота') {
-      return Math.abs((rectangle.bottom_right.y - userNumber) || (rectangle.top_left.x - userNumber))
     }
+    // else if (userGrafics == 'ширина и высота') {
+    // return Math.abs((rectangle.bottom_right.y - userNumber) || (rectangle.top_left.x - userNumber))
+    // }
   } else if (userChange == 'увеличить') {
     if (userGrafics == 'высота') {
       return Math.abs(rectangle.bottom_right.y + userNumber);
     } else if (userGrafics == 'ширина') {
       return Math.abs(rectangle.top_left.x + userNumber);
-    } else if (userGrafics == 'ширина и высота') {
-      return Math.abs((rectangle.bottom_right.y + userNumber) || (rectangle.top_left.x + userNumber))
     }
+    // else if (userGrafics == 'ширина и высота') {
+    // return Math.abs((rectangle.bottom_right.y + userNumber) || (rectangle.top_left.x + userNumber))
+    // }
   }
+  return 1;
 }
 
 const topLeftPoint = new Point(5, 0);
@@ -1092,7 +1094,9 @@ console.log(rectangle.getS());
 
 console.log(rectangle.getP());
 
-console.log(getMassiveOfNumbers(userChange, userGrafics, userNumber, rectangle))
+console.log(
+  getMassiveOfNumbers(userChange, userGrafics, userNumber, rectangle)
+);
 
 // console.log(rectangle.getHeigth())
 // console.log(rectangle.getWidth())
