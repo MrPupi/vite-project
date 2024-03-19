@@ -1009,36 +1009,36 @@ snakeGame();
 
 // obj
 
-class Point {
-  constructor(
-    public x: number,
-    public y: number
-  ) {}
-}
+// class Point {
+//   constructor(
+//     public x: number,
+//     public y: number
+//   ) {}
+// }
 
-class Rectangle {
-  constructor(
-    public top_left: Point,
-    public bottom_right: Point
-  ) {}
+// class Rectangle {
+//   constructor(
+//     public top_left: Point,
+//     public bottom_right: Point
+//   ) {}
 
-  getInfo(): void {
-    console.log(
-      'Coordinates of the rectangle: (' +
-        (this.top_left.x + ', ' + this.bottom_right.y) +
-        ')'
-    );
-    console.log('Height of rectangle: (' + this.bottom_right.y + ')');
-    console.log('Width of rectangle: (' + this.top_left.x + ')');
-  }
+//   getInfo(): void {
+//     console.log(
+//       'Coordinates of the rectangle: (' +
+//         (this.top_left.x + ', ' + this.bottom_right.y) +
+//         ')'
+//     );
+//     console.log('Height of rectangle: (' + this.bottom_right.y + ')');
+//     console.log('Width of rectangle: (' + this.top_left.x + ')');
+//   }
 
-  getS(): number {
-    return Math.abs(this.bottom_right.y * this.top_left.x);
-  }
+//   getS(): number {
+//     return Math.abs(this.bottom_right.y * this.top_left.x);
+//   }
 
-  getP(): number {
-    return Math.abs(this.bottom_right.y * 2 + this.top_left.x * 2);
-  }
+//   getP(): number {
+//     return Math.abs(this.bottom_right.y * 2 + this.top_left.x * 2);
+//   }
 
   // getWidth():number {
   //  return  Math.abs(this.bottom_right.x - this.top_left.x)
@@ -1050,55 +1050,106 @@ class Rectangle {
   // getHeigth():number {
   //  return  Math.abs(this.bottom_right.y - this.top_left.y)
   // }
+// }
+
+// const userChange = prompt('уменьшить или увеличить? ') as string;
+// const userGrafics = prompt('ширина или высота? ') as string;
+// const userNumber = parseInt(
+//   prompt('введите величину изменений') as string
+// ) as number;
+
+// function getMassiveOfNumbers(
+//   userChange: string,
+//   userGrafics: string,
+//   userNumber: number,
+//   rectangle: Rectangle
+// ): number {
+//   if (userChange == 'уменьшить') {
+//     if (userGrafics == 'ширина') {
+//       return Math.abs(rectangle.top_left.x - userNumber);
+//     } else if (userGrafics == 'высота') {
+//       return Math.abs(rectangle.bottom_right.y - userNumber);
+//     }
+//     // else if (userGrafics == 'ширина и высота') {
+//     // return Math.abs((rectangle.bottom_right.y - userNumber) || (rectangle.top_left.x - userNumber))
+//     // }
+//   } else if (userChange == 'увеличить') {
+//     if (userGrafics == 'высота') {
+//       return Math.abs(rectangle.bottom_right.y + userNumber);
+//     } else if (userGrafics == 'ширина') {
+//       return Math.abs(rectangle.top_left.x + userNumber);
+//     }
+//     // else if (userGrafics == 'ширина и высота') {
+//     // return Math.abs((rectangle.bottom_right.y + userNumber) || (rectangle.top_left.x + userNumber))
+//     // }
+//   }
+//   return 1;
+// }
+
+// const topLeftPoint = new Point(5, 0);
+// const bottomRightPoint = new Point(0, 15);
+// const rectangle = new Rectangle(topLeftPoint, bottomRightPoint);
+
+// console.log(rectangle.getS());
+
+// console.log(rectangle.getP());
+
+// console.log(
+//   getMassiveOfNumbers(userChange, userGrafics, userNumber, rectangle)
+// );
+
+// // console.log(rectangle.getHeigth())
+// // console.log(rectangle.getWidth())
+
+// rectangle.getInfo();
+
+
+// obj 
+
+interface Rectangle {
+  top_left: {x:number, y:number}
+  bottom_right: {x:number, y:number}
 }
 
-const userChange = prompt('уменьшить или увеличить? ') as string;
-const userGrafics = prompt('ширина или высота? ') as string;
-const userNumber = parseInt(
-  prompt('введите величину изменений') as string
-) as number;
-
-function getMassiveOfNumbers(
-  userChange: string,
-  userGrafics: string,
-  userNumber: number,
-  rectangle: Rectangle
-): number {
-  if (userChange == 'уменьшить') {
-    if (userGrafics == 'ширина') {
-      return Math.abs(rectangle.top_left.x - userNumber);
-    } else if (userGrafics == 'высота') {
-      return Math.abs(rectangle.bottom_right.y - userNumber);
-    }
-    // else if (userGrafics == 'ширина и высота') {
-    // return Math.abs((rectangle.bottom_right.y - userNumber) || (rectangle.top_left.x - userNumber))
-    // }
-  } else if (userChange == 'увеличить') {
-    if (userGrafics == 'высота') {
-      return Math.abs(rectangle.bottom_right.y + userNumber);
-    } else if (userGrafics == 'ширина') {
-      return Math.abs(rectangle.top_left.x + userNumber);
-    }
-    // else if (userGrafics == 'ширина и высота') {
-    // return Math.abs((rectangle.bottom_right.y + userNumber) || (rectangle.top_left.x + userNumber))
-    // }
+const rectangle: Rectangle = {
+  top_left: {
+    x: 5,
+    y: 0
+  },
+  bottom_right: {
+    x: 0,
+    y: 15
   }
-  return 1;
 }
 
-const topLeftPoint = new Point(5, 0);
-const bottomRightPoint = new Point(0, 15);
-const rectangle = new Rectangle(topLeftPoint, bottomRightPoint);
+console.log("Coordinates of the rectangle: (" + getBottomRight(rectangle.bottom_right.y) + "," + getTopLeft(rectangle.top_left.x) + ")");
+console.log("Bottom right point: (" + getBottomRight(rectangle.bottom_right.y) + ")");
+console.log("Top left point: (" + getTopLeft(rectangle.top_left.x) + ")");
+console.log("Height of rectangle: (" + getHeigth(rectangle.bottom_right.y) + ")");
+console.log("Width of rectangle: (" + getWidth(rectangle.top_left.x) + ")");
 
-console.log(rectangle.getS());
+    function getBottomRight (_y:number) {
+      return Math.abs(rectangle.bottom_right.y)
+    }
+    function getTopLeft(_x:number) {
+      return Math.abs(rectangle.top_left.x )
+    }
+    
+function getWidth(_x:number):number {
+  return  Math.abs(rectangle.top_left.x - rectangle.bottom_right.x)
+}
+function getHeigth(_y:number):number {
+  return  Math.abs(rectangle.bottom_right.y - rectangle.top_left.y)
+}
 
-console.log(rectangle.getP());
+function getNewHeigth(_y:number):number {
+  return  Math.abs(rectangle.bottom_right.y - rectangle.top_left.y + 3)
+}
 
-console.log(
-  getMassiveOfNumbers(userChange, userGrafics, userNumber, rectangle)
-);
+function getNewWidth(_x:number):number {
+  return Math.abs(rectangle.bottom_right.x - rectangle.top_left.x - 5)
+}
 
-// console.log(rectangle.getHeigth())
-// console.log(rectangle.getWidth())
+console.log("New height of rectangle: (" + getNewHeigth(rectangle.bottom_right.y) + ")");
+console.log("New width of rectangle: (" + getNewWidth(rectangle.top_left.x) + ")");
 
-rectangle.getInfo();
