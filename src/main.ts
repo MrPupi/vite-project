@@ -1154,15 +1154,24 @@ console.log("New height of rectangle: (" + getNewHeigth(rectangle.bottom_right.y
 console.log("New width of rectangle: (" + getNewWidth(rectangle.top_left.x) + ")");
 
 function getChangePointTopLeftX(_x:number, change:number):number {
-  return Math.abs(rectangle.top_left.x - change)
+  return Math.abs(rectangle.top_left.x + change)
 }
-
 function getChangePointTopLeftY(_y:number, change:number):number {
   return Math.abs(rectangle.top_left.y + change)
 }
 
-const changePointX = getChangePointTopLeftX(rectangle.top_left.x, 5);
-const changePointY = getChangePointTopLeftY(rectangle.top_left.y, 5);
+function getChangePoinbottomRightX(_x:number, change:number):number {
+  return Math.abs(rectangle.bottom_right.x + change)
+}
+function getChangePointBottomRightY(_y:number, change:number):number {
+  return Math.abs(rectangle.bottom_right.y + change)
+}
 
-console.log(changePointX)
-console.log(changePointY)
+const changePointLeftX = getChangePointTopLeftX(rectangle.top_left.x, -5);
+const changePointLeftY = getChangePointTopLeftY(rectangle.top_left.y, 5);
+
+const changePointrightX = getChangePoinbottomRightX(rectangle.bottom_right.x, 5);
+const changePointRightY = getChangePointBottomRightY(rectangle.bottom_right.y, 5);
+
+console.log("Changed top left point: ( x:" + changePointLeftX + ", y:" + changePointLeftY + ")");
+console.log("Changed bottom right point: ( x:" + changePointrightX + ", y:" + changePointRightY + ")");
