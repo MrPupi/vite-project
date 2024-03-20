@@ -1126,86 +1126,105 @@ const rectangle: Rectangle = {
 
 // Функция принимает объект-прямоугольник и выводит
 // информацию о нем (где какая точка расположена).
+function getInfo(rect:Rectangle) {
+   return "top left: " + rect.top_left.x + ", " + "bottom right: " +rect.bottom_right.y
+}
+
+console.log("Coordinates points of rectangle (" + getInfo(rectangle) + ")")
 
 // Функция принимает объект-прямоугольник и возвращает
 // его ширину.
-
-// Функция принимает объект-прямоугольник и возвращает
-// его высоту.
-
-// Функция принимает объект-прямоугольник и возвращает
-// его площадь.
-
-// Функция принимает объект-прямоугольник и возвращает
-// его периметр.
-
-// Функция изменения ширины прямоугольника. Она прини-
-// мает объект-прямоугольник и на сколько единиц изменить
-// ширину.
-
-// Функция изменения высоты прямоугольника. Она прини-
-// мает объект-прямоугольник и на сколько единиц изменить
-// высоту.
-
-// Функция изменения ширины и высоты прямоугольника.
-// Она принимает объект-прямоугольник и два значения –
-// для изменения ширины и высоты.
-
-// Функция смещения прямоугольника по оси X. Она при-
-// нимает объект-прямоугольник и на сколько единиц его
-// сдвинуть.
-
-// Функция смещения прямоугольника по оси Y. Она при-
-// нимает объект-прямоугольник и на сколько единиц его
-// сдвинуть.
-
-// Функция смещения прямоугольника и по оси X и по
-// оси Y. Она принимает объект-прямоугольник и два значе-
-// ния: сдвиг по оси X и сдвиг по оси Y.
-
-// Функция для проверки, находится ли точка внутри пря-
-// моугольника. Она принимает объект-прямоугольник и
-// координаты точки.
-
-console.log("Coordinates of the rectangle: ( y:" + rectangle.bottom_right.y + ", x:" + rectangle.top_left.x + ")");
-console.log("Bottom right point: (" + rectangle.bottom_right.y + ")");
-console.log("Top left point: (" + rectangle.top_left.x + ")");
-console.log("Height of rectangle: (" + getHeigth(rectangle) + ")");
-console.log("Width of rectangle: (" + getWidth(rectangle) + ")");
-    
 function getWidth(rect:Rectangle):number {
   return  Math.abs(rect.top_left.x - rect.bottom_right.x)
 }
+
+console.log("Width of rectangle: (" + getWidth(rectangle) + ")");
+
+// Функция принимает объект-прямоугольник и возвращает
+// его высоту.
 function getHeigth(rect:Rectangle):number {
   return  Math.abs(rect.bottom_right.y - rect.top_left.y)
 }
 
-function getNewHeigth(rect:Rectangle, addHeight:number) {
-  rect.bottom_right.y += addHeight
-}
-function getNewWidth(rect:Rectangle, addWidth:number) {
-  rect.bottom_right.x += 5
+console.log("Height of rectangle: (" + getHeigth(rectangle) + ")");
+
+// Функция принимает объект-прямоугольник и возвращает
+// его площадь.
+function getSquareOfRectangle(rect:Rectangle) {
+  return Math.abs((rect.bottom_right.y - rect.top_left.y) * (rect.bottom_right.x - rect.top_left.x))
 }
 
-function getMovePointTopLeftX(_x:number, change:number):number {
-  return Math.abs(rectangle.top_left.x + change)
+console.log("Square of rectangle: (" + getSquareOfRectangle(rectangle) + ")")
+// Функция принимает объект-прямоугольник и возвращает
+// его периметр.
+function getPerimeterOfRectangle(rect:Rectangle) {
+  return Math.abs(((rect.bottom_right.y - rect.top_left.y) - (rect.bottom_right.x - rect.top_left.x)) * 2)
 }
-function getMovePointTopLeftY(_y:number, change:number):number {
-  return Math.abs(rectangle.top_left.y + change)
+console.log("Perimeter of rectangle : (" + getPerimeterOfRectangle(rectangle) + ")")
+
+// Функция изменения ширины прямоугольника. Она прини-
+// мает объект-прямоугольник и на сколько единиц изменить
+// ширину.
+function getChangeWidth(rect:Rectangle, addWidth:number) {
+  return rect.bottom_right.x += addWidth
 }
 
-function getMovePoinbottomRightX(_x:number, change:number):number {
-  return Math.abs(rectangle.bottom_right.x + change)
+console.log("Changed width of rectangle : (" + getChangeWidth(rectangle, 5) + ")")
+
+// Функция изменения высоты прямоугольника. Она прини-
+// мает объект-прямоугольник и на сколько единиц изменить
+// высоту.
+function getChangeHeigth(rect:Rectangle, addHeight:number) {
+  return rect.bottom_right.y += addHeight
 }
-function getMovePointBottomRightY(_y:number, change:number):number {
-  return Math.abs(rectangle.bottom_right.y + change)
+
+console.log("Changed heigth of rectangle : (" + getChangeHeigth(rectangle, 5) + ")")
+
+// Функция изменения ширины и высоты прямоугольника.
+// Она принимает объект-прямоугольник и два значения –
+// для изменения ширины и высоты.
+function getChangeHeigthAndWidth(rect:Rectangle, change:number) {
+  return (rect.bottom_right.y += change) + ", " + (rect.bottom_right.x += change)
 }
 
-// const changePointLeftX = getChangePointTopLeftX(rectangle.top_left.x, -5);
-// const changePointLeftY = getChangePointTopLeftY(rectangle.top_left.y, 5);
+console.log("Changed heigth and width of rectangle : ("+ getChangeHeigthAndWidth(rectangle, 5) + ")")
 
-// const changePointrightX = getChangePoinbottomRightX(rectangle.bottom_right.x, 5);
-// const changePointRightY = getChangePointBottomRightY(rectangle.bottom_right.y, 5);
+// Функция смещения прямоугольника по оси X. Она при-
+// нимает объект-прямоугольник и на сколько единиц его
+// сдвинуть.
+function moveRectangleOnXAxis(rect:Rectangle, change:number) {
+  rect.bottom_right.x += change, rect.top_left.x += change
+}
 
-// console.log("Changed top left point: ( x:" + changePointLeftX + ", y:" + changePointLeftY + ")");
-// console.log("Changed bottom right point: ( x:" + changePointrightX + ", y:" + changePointRightY + ")");
+moveRectangleOnXAxis(rectangle, 3)
+
+// Функция смещения прямоугольника по оси Y. Она при-
+// нимает объект-прямоугольник и на сколько единиц его
+// сдвинуть.
+function moveRectangleOnYAxis(rect:Rectangle, change:number) {
+  rect.bottom_right.y += change, rect.top_left.y += change
+}
+
+moveRectangleOnYAxis(rectangle, 1)
+
+// Функция смещения прямоугольника и по оси X и по
+// оси Y. Она принимает объект-прямоугольник и два значе-
+// ния: сдвиг по оси X и сдвиг по оси Y.
+function moveRectangleOnTwoAxis(rect:Rectangle, change:number) {
+  rect.bottom_right.x += change, rect.top_left.x += change
+  rect.bottom_right.y += change, rect.top_left.y += change
+}
+
+moveRectangleOnTwoAxis(rectangle, 5)
+
+// Функция для проверки, находится ли точка внутри пря-
+// моугольника. Она принимает объект-прямоугольник и
+// координаты точки.
+function checkingForValidityPoints(rect:Rectangle) {
+ return rect.top_left.x, rect.bottom_right.y
+}
+
+checkingForValidityPoints(rectangle)
+
+// в последнем не совсем понял принцип но если что спрошу в четверг если не забуду 
+// а так вроде все верно ну или хотя бы приблизительно :)
