@@ -1228,3 +1228,83 @@ checkingForValidityPoints(rectangle)
 
 // в последнем не совсем понял принцип но если что спрошу в четверг если не забуду 
 // а так вроде все верно ну или хотя бы приблизительно :)
+
+// массивы задание 1
+
+// Создать массив из 10 случайных чисел и написать несколько
+// функций для работы с ним.
+const massiveOfNumbers: number[] = [1,3,8,2,0,7,5,9,4,6]
+
+// Функция принимает массив и выводит его на экран.
+function getMassive(massiveOfNumbers:number[]): number[] {
+  return massiveOfNumbers
+}
+console.log(getMassive(massiveOfNumbers))
+
+// Функция принимает массив и выводит только четные
+// элементы.
+function getEvenNumbers(massiveOfNumbers:number[]):number[] {
+  return massiveOfNumbers.filter(number => number % 2 === 0 || number === 0)
+}
+// с нулём при выводе массива разберемся позже
+
+console.log(getEvenNumbers(massiveOfNumbers))
+
+// Функция принимает массив и возвращает сумму всех
+// элементов массива.
+function getSumOfNumbers(massiveOfNumbers:number[]) {
+  return massiveOfNumbers.reduce((b, a) => b + a)
+}
+
+console.log(getSumOfNumbers(massiveOfNumbers))
+
+// Функция принимает массив и возвращает его максималь-
+// ный элемент.
+function getMaxNumber(massiveOfNumbers:number[]) {
+  return Math.max.apply(null, massiveOfNumbers)
+}
+
+console.log(getMaxNumber(massiveOfNumbers))
+
+// Функция добавления нового элемента в массив по ука-
+// занному индексу.
+function insertElementInMassive(massiveOfNumbers:number[]) {
+  massiveOfNumbers.splice(5, 0, 84)
+  return massiveOfNumbers
+}
+
+console.log(insertElementInMassive(massiveOfNumbers))
+
+// Функция удаления элемента из массива по указанному
+// индексу.
+
+function deleteElementInMassive(massiveOfNumbers:number[]) {
+  delete massiveOfNumbers[5]
+  return massiveOfNumbers
+}
+
+console.log(deleteElementInMassive(massiveOfNumbers))
+// ну вроде работает :)
+
+// массивы задание 2
+
+const arr2:number[] = [0, 5, 36, 12, 3]
+
+// Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из двух массивов
+// без повторений.
+function getMassives(arr2:number[],massiveOfNumbers:number[]) {
+  return massiveOfNumbers.filter(element => arr2.includes(element))
+}
+
+console.log(getMassives(arr2, massiveOfNumbers))
+
+// Функция принимает 2 массива и возвращает новый массив,
+// в котором собраны общие элементы (то есть элементы,
+// которые встречаются и в первом и во втором массивах)
+// без повторений.
+function getSecondMassives(arr2:number[],massiveOfNumbers:number[]) {
+  return arr2.filter(element => massiveOfNumbers.includes(element))
+}
+
+console.log(getSecondMassives(arr2,massiveOfNumbers))
