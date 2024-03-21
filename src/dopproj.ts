@@ -1,14 +1,16 @@
 const arr1: number[] = [1,0,7,4,8]
 
-let arr2
+let arr2:number[]
 
 // function scliceMassive (arr1:number[]) {
-//   return arr2 = arr1.splice(1, 1, 5) 
-// }
-
-function getNewElementsMassive (arr1:number[]) {
-  return arr2 = arr1.splice(1, 1, 5, 6, 9, 10, 12, 3) 
-}
+  //   return arr2 = arr1.splice(1, 1, 5) 
+  // }
+  
+  function getNewElementsMassive (arr1:number[]) {
+    return arr2 = arr1.splice(1, 1, 5, 6, 9, 10, 12, 3) 
+    console.log(arr2)
+  }
+  
 
 console.log(getNewElementsMassive(arr1))
 
