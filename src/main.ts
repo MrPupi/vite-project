@@ -1308,3 +1308,7 @@ function getSecondMassives(arr2:number[],massiveOfNumbers:number[]) {
 }
 
 console.log(getSecondMassives(arr2,massiveOfNumbers))
+
+// задание 3
+
+// const fruits:string[] = ['Apple', 'Orange', 'Plum', 'Watermelon', 'Melon',]
