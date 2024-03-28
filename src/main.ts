@@ -1106,209 +1106,282 @@ snakeGame();
 
 // obj 
 
-interface Rectangle {
-  top_left: {x:number, y:number}
-  bottom_right: {x:number, y:number}
-}
+// interface Rectangle {
+//   top_left: {x:number, y:number}
+//   bottom_right: {x:number, y:number}
+// }
 
-const rectangle: Rectangle = {
-  top_left: {
-    x: 5,
-    y: 0
-  },
-  bottom_right: {
-    x: 0,
-    y: 15
-  }
-}
+// const rectangle: Rectangle = {
+//   top_left: {
+//     x: 5,
+//     y: 0
+//   },
+//   bottom_right: {
+//     x: 0,
+//     y: 15
+//   }
+// }
 
-// tl(x1,y1) br(x2,y2)
+// // tl(x1,y1) br(x2,y2)
 
-// Функция принимает объект-прямоугольник и выводит
-// информацию о нем (где какая точка расположена).
-function getInfo(rect:Rectangle) {
-   return "top left: " + rect.top_left.x + ", " + "bottom right: " +rect.bottom_right.y
-}
+// // Функция принимает объект-прямоугольник и выводит
+// // информацию о нем (где какая точка расположена).
+// function getInfo(rect:Rectangle) {
+//    return "top left: " + rect.top_left.x + ", " + "bottom right: " +rect.bottom_right.y
+// }
 
-console.log("Coordinates points of rectangle (" + getInfo(rectangle) + ")")
+// console.log("Coordinates points of rectangle (" + getInfo(rectangle) + ")")
 
-// Функция принимает объект-прямоугольник и возвращает
-// его ширину.
-function getWidth(rect:Rectangle):number {
-  return  Math.abs(rect.top_left.x - rect.bottom_right.x)
-}
+// // Функция принимает объект-прямоугольник и возвращает
+// // его ширину.
+// function getWidth(rect:Rectangle):number {
+//   return  Math.abs(rect.top_left.x - rect.bottom_right.x)
+// }
 
-console.log("Width of rectangle: (" + getWidth(rectangle) + ")");
+// console.log("Width of rectangle: (" + getWidth(rectangle) + ")");
 
-// Функция принимает объект-прямоугольник и возвращает
-// его высоту.
-function getHeigth(rect:Rectangle):number {
-  return  Math.abs(rect.bottom_right.y - rect.top_left.y)
-}
+// // Функция принимает объект-прямоугольник и возвращает
+// // его высоту.
+// function getHeigth(rect:Rectangle):number {
+//   return  Math.abs(rect.bottom_right.y - rect.top_left.y)
+// }
 
-console.log("Height of rectangle: (" + getHeigth(rectangle) + ")");
+// console.log("Height of rectangle: (" + getHeigth(rectangle) + ")");
 
-// Функция принимает объект-прямоугольник и возвращает
-// его площадь.
-function getSquareOfRectangle(rect:Rectangle) {
-  return Math.abs((rect.bottom_right.y - rect.top_left.y) * (rect.bottom_right.x - rect.top_left.x))
-}
+// // Функция принимает объект-прямоугольник и возвращает
+// // его площадь.
+// function getSquareOfRectangle(rect:Rectangle) {
+//   return Math.abs((rect.bottom_right.y - rect.top_left.y) * (rect.bottom_right.x - rect.top_left.x))
+// }
 
-console.log("Square of rectangle: (" + getSquareOfRectangle(rectangle) + ")")
-// Функция принимает объект-прямоугольник и возвращает
-// его периметр.
-function getPerimeterOfRectangle(rect:Rectangle) {
-  return Math.abs(((rect.bottom_right.y - rect.top_left.y) - (rect.bottom_right.x - rect.top_left.x)) * 2)
-}
-console.log("Perimeter of rectangle : (" + getPerimeterOfRectangle(rectangle) + ")")
+// console.log("Square of rectangle: (" + getSquareOfRectangle(rectangle) + ")")
+// // Функция принимает объект-прямоугольник и возвращает
+// // его периметр.
+// function getPerimeterOfRectangle(rect:Rectangle) {
+//   return Math.abs(((rect.bottom_right.y - rect.top_left.y) - (rect.bottom_right.x - rect.top_left.x)) * 2)
+// }
+// console.log("Perimeter of rectangle : (" + getPerimeterOfRectangle(rectangle) + ")")
 
-// Функция изменения ширины прямоугольника. Она прини-
-// мает объект-прямоугольник и на сколько единиц изменить
-// ширину.
-function getChangeWidth(rect:Rectangle, addWidth:number) {
-  return rect.bottom_right.x += addWidth
-}
+// // Функция изменения ширины прямоугольника. Она прини-
+// // мает объект-прямоугольник и на сколько единиц изменить
+// // ширину.
+// function getChangeWidth(rect:Rectangle, addWidth:number) {
+//   return rect.bottom_right.x += addWidth
+// }
 
-console.log("Changed width of rectangle : (" + getChangeWidth(rectangle, 5) + ")")
+// console.log("Changed width of rectangle : (" + getChangeWidth(rectangle, 5) + ")")
 
-// Функция изменения высоты прямоугольника. Она прини-
-// мает объект-прямоугольник и на сколько единиц изменить
-// высоту.
-function getChangeHeigth(rect:Rectangle, addHeight:number) {
-  return rect.bottom_right.y += addHeight
-}
+// // Функция изменения высоты прямоугольника. Она прини-
+// // мает объект-прямоугольник и на сколько единиц изменить
+// // высоту.
+// function getChangeHeigth(rect:Rectangle, addHeight:number) {
+//   return rect.bottom_right.y += addHeight
+// }
 
-console.log("Changed heigth of rectangle : (" + getChangeHeigth(rectangle, 5) + ")")
+// console.log("Changed heigth of rectangle : (" + getChangeHeigth(rectangle, 5) + ")")
 
-// Функция изменения ширины и высоты прямоугольника.
-// Она принимает объект-прямоугольник и два значения –
-// для изменения ширины и высоты.
-function getChangeHeigthAndWidth(rect:Rectangle, change:number) {
-  return (rect.bottom_right.y += change) + ", " + (rect.bottom_right.x += change)
-}
+// // Функция изменения ширины и высоты прямоугольника.
+// // Она принимает объект-прямоугольник и два значения –
+// // для изменения ширины и высоты.
+// function getChangeHeigthAndWidth(rect:Rectangle, change:number) {
+//   return (rect.bottom_right.y += change) + ", " + (rect.bottom_right.x += change)
+// }
 
-console.log("Changed heigth and width of rectangle : ("+ getChangeHeigthAndWidth(rectangle, 5) + ")")
+// console.log("Changed heigth and width of rectangle : ("+ getChangeHeigthAndWidth(rectangle, 5) + ")")
 
-// Функция смещения прямоугольника по оси X. Она при-
-// нимает объект-прямоугольник и на сколько единиц его
-// сдвинуть.
-function moveRectangleOnXAxis(rect:Rectangle, change:number) {
-  rect.bottom_right.x += change, rect.top_left.x += change
-}
+// // Функция смещения прямоугольника по оси X. Она при-
+// // нимает объект-прямоугольник и на сколько единиц его
+// // сдвинуть.
+// function moveRectangleOnXAxis(rect:Rectangle, change:number) {
+//   rect.bottom_right.x += change, rect.top_left.x += change
+// }
 
-moveRectangleOnXAxis(rectangle, 3)
+// moveRectangleOnXAxis(rectangle, 3)
 
-// Функция смещения прямоугольника по оси Y. Она при-
-// нимает объект-прямоугольник и на сколько единиц его
-// сдвинуть.
-function moveRectangleOnYAxis(rect:Rectangle, change:number) {
-  rect.bottom_right.y += change, rect.top_left.y += change
-}
+// // Функция смещения прямоугольника по оси Y. Она при-
+// // нимает объект-прямоугольник и на сколько единиц его
+// // сдвинуть.
+// function moveRectangleOnYAxis(rect:Rectangle, change:number) {
+//   rect.bottom_right.y += change, rect.top_left.y += change
+// }
 
-moveRectangleOnYAxis(rectangle, 1)
+// moveRectangleOnYAxis(rectangle, 1)
 
-// Функция смещения прямоугольника и по оси X и по
-// оси Y. Она принимает объект-прямоугольник и два значе-
-// ния: сдвиг по оси X и сдвиг по оси Y.
-function moveRectangleOnTwoAxis(rect:Rectangle, change:number) {
-  rect.bottom_right.x += change, rect.top_left.x += change
-  rect.bottom_right.y += change, rect.top_left.y += change
-}
+// // Функция смещения прямоугольника и по оси X и по
+// // оси Y. Она принимает объект-прямоугольник и два значе-
+// // ния: сдвиг по оси X и сдвиг по оси Y.
+// function moveRectangleOnTwoAxis(rect:Rectangle, change:number) {
+//   rect.bottom_right.x += change, rect.top_left.x += change
+//   rect.bottom_right.y += change, rect.top_left.y += change
+// }
 
-moveRectangleOnTwoAxis(rectangle, 5)
+// moveRectangleOnTwoAxis(rectangle, 5)
 
-// Функция для проверки, находится ли точка внутри пря-
-// моугольника. Она принимает объект-прямоугольник и
-// координаты точки.
-function checkingForValidityPoints(rect:Rectangle) {
- return rect.top_left.x, rect.bottom_right.y
-}
+// // Функция для проверки, находится ли точка внутри пря-
+// // моугольника. Она принимает объект-прямоугольник и
+// // координаты точки.
+// function checkingForValidityPoints(rect:Rectangle) {
+//  return rect.top_left.x, rect.bottom_right.y
+// }
 
-checkingForValidityPoints(rectangle)
+// checkingForValidityPoints(rectangle)
 
-// в последнем не совсем понял принцип но если что спрошу в четверг если не забуду 
-// а так вроде все верно ну или хотя бы приблизительно :)
+// // в последнем не совсем понял принцип но если что спрошу в четверг если не забуду 
+// // а так вроде все верно ну или хотя бы приблизительно :)
 
-// массивы задание 1
+// // массивы задание 1
 
-// Создать массив из 10 случайных чисел и написать несколько
-// функций для работы с ним.
-const massiveOfNumbers: number[] = [1,3,8,2,0,7,5,9,4,6]
+// // Создать массив из 10 случайных чисел и написать несколько
+// // функций для работы с ним.
+// const massiveOfNumbers: number[] = [1,3,8,2,0,7,5,9,4,6]
 
-// Функция принимает массив и выводит его на экран.
-function getMassive(massiveOfNumbers:number[]): number[] {
-  return massiveOfNumbers
-}
-console.log(getMassive(massiveOfNumbers))
+// // Функция принимает массив и выводит его на экран.
+// function getMassive(massiveOfNumbers:number[]): number[] {
+//   return massiveOfNumbers
+// }
+// console.log(getMassive(massiveOfNumbers))
 
-// Функция принимает массив и выводит только четные
-// элементы.
-function getEvenNumbers(massiveOfNumbers:number[]):number[] {
-  return massiveOfNumbers.filter(number => number % 2 === 0 || number === 0)
-}
-// с нулём при выводе массива разберемся позже
+// // Функция принимает массив и выводит только четные
+// // элементы.
+// function getEvenNumbers(massiveOfNumbers:number[]):number[] {
+//   return massiveOfNumbers.filter(number => number % 2 === 0 || number === 0)
+// }
+// // с нулём при выводе массива разберемся позже
 
-console.log(getEvenNumbers(massiveOfNumbers))
+// console.log(getEvenNumbers(massiveOfNumbers))
 
-// Функция принимает массив и возвращает сумму всех
-// элементов массива.
-function getSumOfNumbers(massiveOfNumbers:number[]) {
-  return massiveOfNumbers.reduce((b, a) => b + a)
-}
+// // Функция принимает массив и возвращает сумму всех
+// // элементов массива.
+// function getSumOfNumbers(massiveOfNumbers:number[]) {
+//   return massiveOfNumbers.reduce((b, a) => b + a)
+// }
 
-console.log(getSumOfNumbers(massiveOfNumbers))
+// console.log(getSumOfNumbers(massiveOfNumbers))
 
-// Функция принимает массив и возвращает его максималь-
-// ный элемент.
-function getMaxNumber(massiveOfNumbers:number[]) {
-  return Math.max.apply(null, massiveOfNumbers)
-}
+// // Функция принимает массив и возвращает его максималь-
+// // ный элемент.
+// function getMaxNumber(massiveOfNumbers:number[]) {
+//   return Math.max.apply(null, massiveOfNumbers)
+// }
 
-console.log(getMaxNumber(massiveOfNumbers))
+// console.log(getMaxNumber(massiveOfNumbers))
 
-// Функция добавления нового элемента в массив по ука-
-// занному индексу.
-function insertElementInMassive(massiveOfNumbers:number[]) {
-  massiveOfNumbers.splice(5, 0, 84)
-  return massiveOfNumbers
-}
+// // Функция добавления нового элемента в массив по ука-
+// // занному индексу.
+// function insertElementInMassive(massiveOfNumbers:number[]) {
+//   massiveOfNumbers.splice(5, 0, 84)
+//   return massiveOfNumbers
+// }
 
-console.log(insertElementInMassive(massiveOfNumbers))
+// console.log(insertElementInMassive(massiveOfNumbers))
 
-// Функция удаления элемента из массива по указанному
-// индексу.
+// // Функция удаления элемента из массива по указанному
+// // индексу.
 
-function deleteElementInMassive(massiveOfNumbers:number[]) {
-  delete massiveOfNumbers[5]
-  return massiveOfNumbers
-}
+// function deleteElementInMassive(massiveOfNumbers:number[]) {
+//   delete massiveOfNumbers[5]
+//   return massiveOfNumbers
+// }
 
-console.log(deleteElementInMassive(massiveOfNumbers))
-// ну вроде работает :)
+// console.log(deleteElementInMassive(massiveOfNumbers))
+// // ну вроде работает :)
 
-// массивы задание 2
+// // массивы задание 2
 
-const arr2:number[] = [0, 5, 36, 12, 3]
+// const arr2:number[] = [0, 5, 36, 12, 3]
 
-// Функция принимает 2 массива и возвращает новый мас-
-// сив, в котором собраны все элементы из двух массивов
-// без повторений.
-function getMassives(arr2:number[],massiveOfNumbers:number[]) {
-  return massiveOfNumbers.filter(element => arr2.includes(element))
-}
+// // Функция принимает 2 массива и возвращает новый мас-
+// // сив, в котором собраны все элементы из двух массивов
+// // без повторений.
+// function getMassives(arr2:number[],massiveOfNumbers:number[]) {
+//   return massiveOfNumbers.filter(element => arr2.includes(element))
+// }
 
-console.log(getMassives(arr2, massiveOfNumbers))
+// console.log(getMassives(arr2, massiveOfNumbers))
 
-// Функция принимает 2 массива и возвращает новый массив,
-// в котором собраны общие элементы (то есть элементы,
-// которые встречаются и в первом и во втором массивах)
-// без повторений.
-function getSecondMassives(arr2:number[],massiveOfNumbers:number[]) {
-  return arr2.filter(element => massiveOfNumbers.includes(element))
-}
+// // Функция принимает 2 массива и возвращает новый массив,
+// // в котором собраны общие элементы (то есть элементы,
+// // которые встречаются и в первом и во втором массивах)
+// // без повторений.
+// function getSecondMassives(arr2:number[],massiveOfNumbers:number[]) {
+//   return arr2.filter(element => massiveOfNumbers.includes(element))
+// }
 
-console.log(getSecondMassives(arr2,massiveOfNumbers))
+// console.log(getSecondMassives(arr2,massiveOfNumbers))
 
 // задание 3
 
-// const fruits:string[] = ['Apple', 'Orange', 'Plum', 'Watermelon', 'Melon',]
+interface Products  {
+  name:string,
+  count:number,
+  value:boolean
+}
+
+const buyledList:Products[] = [
+  { name:'Картошка', count: 1, value:false},
+  { name:'Морковка', count: 5, value:true},
+  { name:'Хлеб', count: 2, value:false},
+  { name:'Молоко', count: 10, value:true},
+  { name:'Слива', count: 20, value:false},
+  { name:'Сыр', count: 4, value:true},
+]
+
+// 1
+// Вывод всего списка на экран таким образом, чтобы сначала
+// шли некупленные продукты, а потом – купленные.
+
+const addElToBuyList = document.getElementById('userBuyedList') as HTMLOListElement
+
+function renderBuyedList(arr:Products[]) {
+  let html = ''
+
+  for(let el of arr) {
+    if(!el.value) {
+      html += `<li style="color:red"> ${el.name} ${el.count} <button data-name="${el.name}"> Отметить купленным </button> </li>`
+    }
+  }
+  for(let el of arr) {
+    if(el.value) {
+      html += `<li style="color:green"> ${el.name} ${el.count} </li>`
+    }
+  }
+  addElToBuyList.innerHTML = html
+}
+
+renderBuyedList(buyledList)
+
+// 2 Добавление покупки в список.Учтите, что при добавлении
+// покупки с уже существующим в списке продуктом, необ -
+// ходимо увеличивать количество в существующей покупке,
+// а не добавлять новую.
+
+const productNameInput = document.getElementById('nameProduct') as HTMLInputElement
+const productValueInput = document.getElementById('valueProduct') as HTMLInputElement
+const addProductBtn = document.getElementById('addInList') as HTMLButtonElement
+
+function addProduct(arr:Products[], name:string, count:number) {
+  let inList = false 
+   for(let el of arr) {
+    if(el.name == name && !el.value) {
+      el.count += count 
+      inList = true
+    }
+   }
+   if(!inList) {
+    arr.push({name,count,value:false})
+   }
+   renderBuyedList(arr)
+}
+
+addProduct(buyledList, 'Молоко', 2)
+
+addProductBtn.addEventListener('click', function() {
+  const count = parseFloat(productValueInput.value.replace(',', '.'))
+  addProduct(buyledList, productNameInput.value, count)
+  productNameInput.value = ''
+  productValueInput.value = ''
+})
+
+// 3 Покупка продукта.Функция принимает название продукта
+// и отмечает его как купленный.
+
