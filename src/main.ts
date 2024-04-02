@@ -1358,6 +1358,7 @@ renderBuyedList(buyledList)
 const productNameInput = document.getElementById('nameProduct') as HTMLInputElement
 const productValueInput = document.getElementById('valueProduct') as HTMLInputElement
 const addProductBtn = document.getElementById('addInList') as HTMLButtonElement
+const markInGreenBtn = document.getElementById('markInGreen') as HTMLButtonElement
 
 function addProduct(arr:Products[], name:string, count:number) {
   let inList = false 
@@ -1373,7 +1374,7 @@ function addProduct(arr:Products[], name:string, count:number) {
    renderBuyedList(arr)
 }
 
-addProduct(buyledList, 'Молоко', 2)
+addProduct(buyledList, 'Молоко', 3)
 
 addProductBtn.addEventListener('click', function() {
   const count = parseFloat(productValueInput.value.replace(',', '.'))
@@ -1385,3 +1386,47 @@ addProductBtn.addEventListener('click', function() {
 // 3 Покупка продукта.Функция принимает название продукта
 // и отмечает его как купленный.
 
+function productBuyed(arr:Products[], name:string, count:number) {
+  let inList = false
+  for(let el of arr) {
+    if(el.name == name && !el.value) {
+      el.count += count 
+      inList = true
+    }
+   }
+   
+   renderBuyedList(arr)
+}
+
+productBuyed(buyledList, 'Молоко', 2)
+
+markInGreenBtn.addEventListener('click', function() {
+  const count = parseFloat(productValueInput.value.replace(',', '.'))
+  productBuyed(buyledList, productNameInput.value, count)
+  productNameInput.value = ''
+  productValueInput.value = ''
+})
+
+const addOne = document.getElementById('addOne') as HTMLButtonElement
+const dissOne = document.getElementById('dissOne') as HTMLButtonElement
+
+if(addOne) {
+  addOne.addEventListener('click', )
+}
+
+const userNumbers = document.getElementById('userNumbers') as HTMLDivElement
+
+function btnSelect(addOne:number, dissOne:number) {
+  let html = ''
+  let count = 0
+
+  if(addOne) {
+    count += 1
+  } else if(dissOne) {
+    count -= 1
+  }
+  
+  userNumbers.innerHTML = html
+}
+
+btnSelect(addOne, dissOne)

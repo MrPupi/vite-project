@@ -5,11 +5,37 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Podkova:wght@400..800&display=swap" rel="stylesheet">
     <title>Vite + TS</title>
+    <style>
+      * {
+        font-family: "Podkova", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+      }
+      #score {
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+        margin: 50px auto;
+      }
+    </style>
   </head>
   <body>
 
-    
+    <div id="score">
+      <div id="userNumbers">
+
+      </div>
+      <div id="userSelect">
+        <button id="addOne">Добавить на единицу</button>
+        <button id="dissOne">Убавить на единицу</button>
+      </div>
+    </div>
+    <br>
     <div id="userBuyedList">
       <ol>
       </ol>
@@ -20,9 +46,9 @@
         <button id="addInList">
           Добавить в список
         </button>
-        <!-- <button id="markInGreen">
+        <button id="markInGreen">
           Отметить купленным
-        </button> -->
+        </button>
       </div>
     </div>
 
