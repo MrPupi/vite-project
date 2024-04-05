@@ -86,88 +86,88 @@ cerv.oninput = function () {
 // ЭТО ЗМЕЙКА
 // Следуйте дальше и увидите больше!!!
 
-const canvas: HTMLCanvasElement | null = document.getElementById(
-  'game'
-) as HTMLCanvasElement;
-const ctx = canvas.getContext('2d');
+// const canvas: HTMLCanvasElement | null = document.getElementById(
+//   'game'
+// ) as HTMLCanvasElement;
+// const ctx = canvas.getContext('2d');
 
-const ground = new Image();
-ground.src = './ground.png';
+// const ground = new Image();
+// ground.src = './ground.png';
 
-const foodImg = new Image();
-foodImg.src = './food.png';
+// const foodImg = new Image();
+// foodImg.src = './food.png';
 
-const box = 32;
+// const box = 32;
 
-let score = 0;
+// let score = 0;
 
-let food = {
-  x: Math.floor(Math.random() * 17 + 1) * box,
-  y: Math.floor(Math.random() * 15 + 2) * box
-};
+// let food = {
+//   x: Math.floor(Math.random() * 17 + 1) * box,
+//   y: Math.floor(Math.random() * 15 + 2) * box
+// };
 
-const snake: { x: number; y: number }[] = [];
-snake[0] = {
-  x: 9 * box,
-  y: 10 * box
-};
+// const snake: { x: number; y: number }[] = [];
+// snake[0] = {
+//   x: 9 * box,
+//   y: 10 * box
+// };
 
-document.addEventListener('keydown', direction);
+// document.addEventListener('keydown', direction);
 
-let dir: string;
+// let dir: string;
 
-function direction(event: KeyboardEvent) {
-  if (event.keyCode == 65 && dir != 'right') dir = 'left';
-  else if (event.keyCode == 87 && dir != 'down') dir = 'up';
-  else if (event.keyCode == 68 && dir != 'left') dir = 'right';
-  else if (event.keyCode == 83 && dir != 'up') dir = 'down';
-}
+// function direction(event: KeyboardEvent) {
+//   if (event.keyCode == 65 && dir != 'right') dir = 'left';
+//   else if (event.keyCode == 87 && dir != 'down') dir = 'up';
+//   else if (event.keyCode == 68 && dir != 'left') dir = 'right';
+//   else if (event.keyCode == 83 && dir != 'up') dir = 'down';
+// }
 
-setInterval(snakeGame, 100);
+// setInterval(snakeGame, 100);
 
-function snakeGame() {
-  if (!ctx) return;
-  ctx.drawImage(ground, 0, 0);
+// function snakeGame() {
+//   if (!ctx) return;
+//   ctx.drawImage(ground, 0, 0);
 
-  ctx.drawImage(foodImg, food.x, food.y);
+//   ctx.drawImage(foodImg, food.x, food.y);
 
-  for (let i = 0; i < snake.length; i++) {
-    ctx.fillStyle = i == 0 ? 'red' : 'brown';
-    ctx.fillRect(snake[i].x, snake[i].y, box, box);
-  }
-  ctx.fillStyle = 'white';
-  ctx.font = '50px Arial';
-  ctx.fillText(score.toString(), box * 2.5, box * 1.7);
+//   for (let i = 0; i < snake.length; i++) {
+//     ctx.fillStyle = i == 0 ? 'red' : 'brown';
+//     ctx.fillRect(snake[i].x, snake[i].y, box, box);
+//   }
+//   ctx.fillStyle = 'white';
+//   ctx.font = '50px Arial';
+//   ctx.fillText(score.toString(), box * 2.5, box * 1.7);
 
-  let snakeX = snake[0].x;
-  let snakeY = snake[0].y;
+//   let snakeX = snake[0].x;
+//   let snakeY = snake[0].y;
 
-  if (snakeX == food.x && snakeY == food.y) {
-    score++;
-    food = {
-      x: Math.floor(Math.random() * 17 + 1) * box,
-      y: Math.floor(Math.random() * 15 + 2) * box
+//   if (snakeX == food.x && snakeY == food.y) {
+//     score++;
+//     food = {
+//       x: Math.floor(Math.random() * 17 + 1) * box,
+//       y: Math.floor(Math.random() * 15 + 2) * box
 
-      // console.log('по идее должна расти')
-    };
-  } else {
-    snake.pop();
-  }
+//       // console.log('по идее должна расти')
+//     };
+//   } else {
+//     snake.pop();
+//   }
 
-  if (dir == 'left') snakeX -= box;
-  if (dir == 'right') snakeX += box;
-  if (dir == 'up') snakeY -= box;
-  if (dir == 'down') snakeY += box;
+//   if (dir == 'left') snakeX -= box;
+//   if (dir == 'right') snakeX += box;
+//   if (dir == 'up') snakeY -= box;
+//   if (dir == 'down') snakeY += box;
 
-  const newHead = {
-    x: snakeX,
-    y: snakeY
-  };
+//   const newHead = {
+//     x: snakeX,
+//     y: snakeY
+//   };
 
-  snake.unshift(newHead);
-}
+//   snake.unshift(newHead);
+// }
 
-snakeGame();
+// snakeGame();
 
 // далее идет домашка по javascript ifelse
 // и так практика 1
@@ -1310,123 +1310,3 @@ snakeGame();
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
 // задание 3
-
-interface Products  {
-  name:string,
-  count:number,
-  value:boolean
-}
-
-const buyledList:Products[] = [
-  { name:'Картошка', count: 1, value:false},
-  { name:'Морковка', count: 5, value:true},
-  { name:'Хлеб', count: 2, value:false},
-  { name:'Молоко', count: 10, value:true},
-  { name:'Слива', count: 20, value:false},
-  { name:'Сыр', count: 4, value:true},
-]
-
-// 1
-// Вывод всего списка на экран таким образом, чтобы сначала
-// шли некупленные продукты, а потом – купленные.
-
-const addElToBuyList = document.getElementById('userBuyedList') as HTMLOListElement
-
-function renderBuyedList(arr:Products[]) {
-  let html = ''
-
-  for(let el of arr) {
-    if(!el.value) {
-      html += `<li style="color:red"> ${el.name} ${el.count} <button data-name="${el.name}"> Отметить купленным </button> </li>`
-    }
-  }
-  for(let el of arr) {
-    if(el.value) {
-      html += `<li style="color:green"> ${el.name} ${el.count} </li>`
-    }
-  }
-  addElToBuyList.innerHTML = html
-}
-
-renderBuyedList(buyledList)
-
-// 2 Добавление покупки в список.Учтите, что при добавлении
-// покупки с уже существующим в списке продуктом, необ -
-// ходимо увеличивать количество в существующей покупке,
-// а не добавлять новую.
-
-const productNameInput = document.getElementById('nameProduct') as HTMLInputElement
-const productValueInput = document.getElementById('valueProduct') as HTMLInputElement
-const addProductBtn = document.getElementById('addInList') as HTMLButtonElement
-const markInGreenBtn = document.getElementById('markInGreen') as HTMLButtonElement
-
-function addProduct(arr:Products[], name:string, count:number) {
-  let inList = false 
-   for(let el of arr) {
-    if(el.name == name && !el.value) {
-      el.count += count 
-      inList = true
-    }
-   }
-   if(!inList) {
-    arr.push({name,count,value:false})
-   }
-   renderBuyedList(arr)
-}
-
-addProduct(buyledList, 'Молоко', 3)
-
-addProductBtn.addEventListener('click', function() {
-  const count = parseFloat(productValueInput.value.replace(',', '.'))
-  addProduct(buyledList, productNameInput.value, count)
-  productNameInput.value = ''
-  productValueInput.value = ''
-})
-
-// 3 Покупка продукта.Функция принимает название продукта
-// и отмечает его как купленный.
-
-function productBuyed(arr:Products[], name:string, count:number) {
-  let inList = false
-  for(let el of arr) {
-    if(el.name == name && !el.value) {
-      el.count += count 
-      inList = true
-    }
-   }
-   
-   renderBuyedList(arr)
-}
-
-productBuyed(buyledList, 'Молоко', 2)
-
-markInGreenBtn.addEventListener('click', function() {
-  const count = parseFloat(productValueInput.value.replace(',', '.'))
-  productBuyed(buyledList, productNameInput.value, count)
-  productNameInput.value = ''
-  productValueInput.value = ''
-})
-
-const addOne = document.getElementById('addOne') as HTMLButtonElement
-const dissOne = document.getElementById('dissOne') as HTMLButtonElement
-
-if(addOne) {
-  addOne.addEventListener('click', )
-}
-
-const userNumbers = document.getElementById('userNumbers') as HTMLDivElement
-
-function btnSelect(addOne:number, dissOne:number) {
-  let html = ''
-  let count = 0
-
-  if(addOne) {
-    count += 1
-  } else if(dissOne) {
-    count -= 1
-  }
-  
-  userNumbers.innerHTML = html
-}
-
-btnSelect(addOne, dissOne)
