@@ -1309,4 +1309,3 @@ cerv.oninput = function () {
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
-// задание 3
