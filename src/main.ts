@@ -1,6 +1,6 @@
 import './style.scss';
 
-console.log('Hello, Peep');
+// console.log('Hello, Peep');
 
 // const nameUser = prompt(' Укажите ваше Имя')
 // const surnameUser = prompt(' Укажите вашу Фамилию')
@@ -1309,3 +1309,102 @@ cerv.oninput = function () {
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
+// 1
+// Написать функцию, которая принимает 2 строки и срав-
+// нивает их длину. Функция возвращает 1, если в первой
+// строке больше символов, чем во второй; -1 – если во вто-
+// рой больше символов, чем в первой; или 0 – если строки
+// одинаковой длины.
+
+function comparisonStrings(str1:string, str2:string) {
+  let result:number= 0
+  if(str1.length > str2.length) {
+    return console.log(result+=1)
+  } else if(str1.length<str2.length) {
+    return console.log(result-=1)
+  } else {
+    return console.log(result) 
+  }
+}
+
+comparisonStrings('adadadaf', 'adafa')
+
+// 2
+// Написать функцию, которая переводит в верхний регистр
+// первый символ переданной строки.
+
+// function getCapitalize(str:string):string {
+//  return str.charAt(0).toUpperCase() + str.slice(1)
+// }
+
+// const inputStr:string = 'hello' 
+// const output= getCapitalize(inputStr)
+
+// console.log(output)
+
+// // Написать функцию, которая считает количество гласных
+// // букв в переданной строке.
+
+// function countVowels(str: string): number {
+//   const vowels = ['a', 'e', 'i', 'o', 'u'];
+//   let count = 0;
+  
+//   for (let char of str.toLowerCase()) {
+//       if (vowels.includes(char)) {
+//           count++;
+//       }
+//   }
+  
+//   return count;
+// }
+
+// const inputStrin: string = "Hello World";
+// const vowelsCount: number = countVowels(inputStrin);
+// console.log(vowelsCount);
+
+// // Написать функцию для проверки спама в переданной
+// // строке. Функция возвращает true, если строка содержит
+// // спам. Спамом считать следующие слова: 100% бесплатно,
+// // увеличение продаж, только сегодня, не удаляйте, ххх.
+// // Функция должна быть нечувствительна к регистру.
+
+// function checkForSpam(str: string): boolean {
+//   const spamWords = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх'];
+//   const lowerCaseStr = str.toLowerCase();
+//   for (let spamWord of spamWords) {
+//       if (lowerCaseStr.includes(spamWord.toLowerCase())) {
+//           return true;
+//       }
+//   }
+//   return false;
+// }
+// const inputString: string = "Получите скидку 50%!";
+// const isSpam: boolean = checkForSpam(inputString);
+// console.log(isSpam); 
+// const inputString2: string = "Получите бесплатный подарок!";
+// const isSpam2: boolean = checkForSpam(inputString2);
+// console.log(isSpam2);
+
+// ! ОН НЕ РАБОТАЕТ,
+// пока что
+
+// Написать функцию сокращения строки. Функция прини- 
+// мает строку и ее максимальную длину. Если длина строки 
+// больше, чем максимальная, то необходимо отбросить 
+// лишние символы, добавив вместо них троеточие. 
+// Например: truncate(“Hello, world!”, 8) должна вернуть 
+// “Hello...”.
+
+function truncate(str: string, maxLength: number): string {
+  if (str.length <= maxLength) {
+      return str;
+  } else {
+      return str.slice(0, maxLength) + '...';
+  }
+}
+
+// Пример использования
+const inputString: string = "Hello, world!";
+const maxLength: number = 8;
+const truncatedString: string = truncate(inputString, maxLength);
+console.log(truncatedString);
