@@ -1316,18 +1316,20 @@ cerv.oninput = function () {
 // рой больше символов, чем в первой; или 0 – если строки
 // одинаковой длины.
 
-function comparisonStrings(str1:string, str2:string) {
-  let result:number= 0
-  if(str1.length > str2.length) {
-    return console.log(result+=1)
-  } else if(str1.length<str2.length) {
-    return console.log(result-=1)
-  } else {
-    return console.log(result) 
-  }
-}
+// * работает
 
-comparisonStrings('adadadaf', 'adafa')
+// function comparisonStrings(str1:string, str2:string) {
+//   let result:number= 0
+//   if(str1.length > str2.length) {
+//     return console.log(result+=1)
+//   } else if(str1.length<str2.length) {
+//     return console.log(result-=1)
+//   } else {
+//     return console.log(result) 
+//   }
+// }
+
+// comparisonStrings('adadadaf', 'adafa')
 
 // 2
 // Написать функцию, которая переводит в верхний регистр
@@ -1344,6 +1346,8 @@ comparisonStrings('adadadaf', 'adafa')
 
 // // Написать функцию, которая считает количество гласных
 // // букв в переданной строке.
+
+// * работает
 
 // function countVowels(str: string): number {
 //   const vowels = ['a', 'e', 'i', 'o', 'u'];
@@ -1368,9 +1372,12 @@ comparisonStrings('adadadaf', 'adafa')
 // // увеличение продаж, только сегодня, не удаляйте, ххх.
 // // Функция должна быть нечувствительна к регистру.
 
+// ! ОН НЕ РАБОТАЕТ,
+//? пока что
+
 // function checkForSpam(str: string): boolean {
-//   const spamWords = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх'];
-//   const lowerCaseStr = str.toLowerCase();
+  //   const spamWords = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх'];
+  //   const lowerCaseStr = str.toLowerCase();
 //   for (let spamWord of spamWords) {
 //       if (lowerCaseStr.includes(spamWord.toLowerCase())) {
 //           return true;
@@ -1385,9 +1392,6 @@ comparisonStrings('adadadaf', 'adafa')
 // const isSpam2: boolean = checkForSpam(inputString2);
 // console.log(isSpam2);
 
-// ! ОН НЕ РАБОТАЕТ,
-// пока что
-
 // Написать функцию сокращения строки. Функция прини- 
 // мает строку и ее максимальную длину. Если длина строки 
 // больше, чем максимальная, то необходимо отбросить 
@@ -1395,16 +1399,17 @@ comparisonStrings('adadadaf', 'adafa')
 // Например: truncate(“Hello, world!”, 8) должна вернуть 
 // “Hello...”.
 
-function truncate(str: string, maxLength: number): string {
-  if (str.length <= maxLength) {
-      return str;
-  } else {
-      return str.slice(0, maxLength) + '...';
-  }
-}
+// * работает
 
-// Пример использования
-const inputString: string = "Hello, world!";
-const maxLength: number = 8;
-const truncatedString: string = truncate(inputString, maxLength);
-console.log(truncatedString);
+// function truncate(str: string, maxLength: number): string {
+//   if (str.length <= maxLength) {
+//       return str;
+//   } else {
+//       return str.slice(0, maxLength) + '...';
+//   }
+// }
+
+// const inputString: string = "Hello, world!";
+// const maxLength: number = 5;
+// const truncatedString: string = truncate(inputString, maxLength);
+// console.log(truncatedString);
