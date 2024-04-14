@@ -1299,17 +1299,16 @@ cerv.oninput = function () {
 
 // console.log(getMassives(arr2, massiveOfNumbers))
 
-// // Функция принимает 2 массива и возвращает новый массив,
-// // в котором собраны общие элементы (то есть элементы,
-// // которые встречаются и в первом и во втором массивах)
-// // без повторений.
+// Функция принимает 2 массива и возвращает новый массив,
+// в котором собраны общие элементы (то есть элементы,
+// которые встречаются и в первом и во втором массивах)
+// без повторений.
 // function getSecondMassives(arr2:number[],massiveOfNumbers:number[]) {
 //   return arr2.filter(element => massiveOfNumbers.includes(element))
 // }
 
 // console.log(getSecondMassives(arr2,massiveOfNumbers))
 
-// 1
 // Написать функцию, которая принимает 2 строки и срав-
 // нивает их длину. Функция возвращает 1, если в первой
 // строке больше символов, чем во второй; -1 – если во вто-
@@ -1344,8 +1343,8 @@ cerv.oninput = function () {
 
 // console.log(output)
 
-// // Написать функцию, которая считает количество гласных
-// // букв в переданной строке.
+// Написать функцию, которая считает количество гласных
+// букв в переданной строке.
 
 // * работает
 
@@ -1366,31 +1365,40 @@ cerv.oninput = function () {
 // const vowelsCount: number = countVowels(inputStrin);
 // console.log(vowelsCount);
 
-// // Написать функцию для проверки спама в переданной
-// // строке. Функция возвращает true, если строка содержит
-// // спам. Спамом считать следующие слова: 100% бесплатно,
-// // увеличение продаж, только сегодня, не удаляйте, ххх.
-// // Функция должна быть нечувствительна к регистру.
-
 // ! ОН НЕ РАБОТАЕТ,
 //? пока что
 
-// function checkForSpam(str: string): boolean {
-  //   const spamWords = ['100% бесплатно', 'увеличение продаж', 'только сегодня', 'не удаляйте', 'ххх'];
-  //   const lowerCaseStr = str.toLowerCase();
-//   for (let spamWord of spamWords) {
+// Написать функцию для проверки спама в переданной
+// строке. Функция возвращает true, если строка содержит
+// спам. Спамом считать следующие слова: 100% бесплатно,
+// увеличение продаж, только сегодня, не удаляйте, ххх.
+// Функция должна быть нечувствительна к регистру.
+
+// interface Spam {
+//   str: { name: string, value: boolean }[];
+// }
+
+// const arrOfWords: Spam = {
+//   str: [
+//     { name: '100% бесплатно', value: true },
+//     { name: 'увеличение продаж', value: true },
+//     { name: 'только сегодня', value: true },
+//     { name: 'не удаляйте', value: true },
+//     { name: 'xxx', value: true }
+//   ]
+// };
+
+// function checkForSpam(str: Spam) {
+//   const lowerCaseStr: string = str.name.toLowerCase();
+//   for (const spamWord of arrOfWords) {
 //       if (lowerCaseStr.includes(spamWord.toLowerCase())) {
 //           return true;
 //       }
 //   }
 //   return false;
 // }
-// const inputString: string = "Получите скидку 50%!";
-// const isSpam: boolean = checkForSpam(inputString);
-// console.log(isSpam); 
-// const inputString2: string = "Получите бесплатный подарок!";
-// const isSpam2: boolean = checkForSpam(inputString2);
-// console.log(isSpam2);
+
+// checkForSpam(arrOfWords)
 
 // Написать функцию сокращения строки. Функция прини- 
 // мает строку и ее максимальную длину. Если длина строки 
@@ -1413,3 +1421,281 @@ cerv.oninput = function () {
 // const maxLength: number = 5;
 // const truncatedString: string = truncate(inputString, maxLength);
 // console.log(truncatedString);
+
+// dz
+// Написать функцию, которая принимает строку и выводит
+// статистику о ней: количество букв, количество цифр и
+// количество других знаков.
+
+// function getStatistics(str: string): void {
+//   let lettersCount: number = 0;
+//   let digitsCount: number = 0;
+//   let otherCount: number = 0;
+
+//   for (const char of str) {
+//       if (/[a-zA-Zа-яА-Я]/.test(char)) {
+//           lettersCount++;
+//       } else if (/[0-9]/.test(char)) {
+//           digitsCount++;
+//       } else {
+//           otherCount++;
+//       }
+//   }
+
+//   console.log(`Строка: ${str}`);
+//   console.log(`Количество букв: ${lettersCount}`);
+//   console.log(`Количество цифр: ${digitsCount}`);
+//   console.log(`Количество других знаков: ${otherCount}`);
+// }
+
+// getStatistics('Пример строки с 123 цифрами и !@#$%^&* символами');
+
+// Написать функцию, которая принимает двузначное число
+// и возвращает его в текстовом виде.
+// Например: 35 – тридцать пять, 89 – восемьдесят девять,
+// 12 – двенадцать.
+
+// function numberToWords(num: number): string {
+//   const units: string[] = ['один', 'два', 'три', 'четыре', 'пять', 'шесть', 'семь', 'восемь', 'девять'];
+//   const teens: string[] = ['десять', 'одиннадцать', 'двенадцать', 'тринадцать', 'четырнадцать', 'пятнадцать', 'шестнадцать', 'семнадцать', 'восемнадцать', 'девятнадцать'];
+//   const tens: string[] = ['', '', 'двадцать', 'тридцать', 'сорок', 'пятьдесят', 'шестьдесят', 'семьдесят', 'восемьдесят', 'девяносто'];
+
+//   if (num < 10 || num > 99) {
+//       return 'Число должно быть двузначным';
+//   }
+
+//   if (num < 20) {
+//       return teens[num - 10];
+//   }
+
+//   const unitsDigit: number = num % 10;
+//   const tensDigit: number = Math.floor(num / 10);
+
+//   if (unitsDigit === 0) {
+//       return tens[tensDigit];
+//   } else {
+//       return `${tens[tensDigit]} ${units[unitsDigit]}`;
+//   }
+// }
+
+// console.log(numberToWords(30)); 
+// console.log(numberToWords(89)); 
+// console.log(numberToWords(12));
+
+// Написать функцию, которая заменяет в полученной строке
+// большие буквы на маленькие, маленькие – на большие, а
+// цифры – на знак нижнего подчеркивания.
+
+// function transformString(str: string): string {
+//   let transformedStr = '';
+
+//   for (const char of str) {
+//       if (/[A-ZА-Я]/.test(char)) {
+//           transformedStr += char.toLowerCase();
+//       } else if (/[a-zа-я]/.test(char)) {
+//           transformedStr += char.toUpperCase();
+//       } else if (/[0-9]/.test(char)) {
+//           transformedStr += '_';
+//       } else {
+//           transformedStr += char;
+//       }
+//   }
+
+//   return transformedStr;
+// }
+
+// const inputString: string = 'Пример строки 123 с Большими и Маленькими Буквами!';
+// const transformedString: string = transformString(inputString);
+// console.log(transformedString);
+
+// Написать функцию, которая преобразует названия css-
+// стилей с дефисом в название в СamelСase стиле: font-size
+// в fontSize, background-color в backgroundColor, text-
+// align в textAlign.
+
+// function transformCssStyle(cssStyle: string): string {
+//   return cssStyle.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+// }
+
+// const cssStyle1: string = 'font-size';
+// const cssStyle2: string = 'background-color';
+// const cssStyle3: string = 'text-align';
+
+// console.log(transformCssStyle(cssStyle1)); // fontSize
+// console.log(transformCssStyle(cssStyle2)); // backgroundColor
+// console.log(transformCssStyle(cssStyle3)); // textAlign
+
+// Написать функцию, которая принимает словосочетание
+// и превращает его в аббревиатуру.
+// Например: cascading style sheets в CSS, объектно-
+// ориентированное программирование в ООП.
+
+// function createAbbreviation(phrase: string): string {
+//   const words: string[] = phrase.split(' ');
+//   let abbreviation: string = '';
+
+//   for (const word of words) {
+//       abbreviation += word[0].toUpperCase();
+//   }
+
+//   return abbreviation;
+// }
+
+// const phrase1: string = 'cascading style sheets';
+// const phrase2: string = 'объектно-ориентированное программирование';
+
+// console.log(createAbbreviation(phrase1)); // CSS
+// console.log(createAbbreviation(phrase2)); // ООП
+
+// Написать функцию, которая принимает любое коли-
+// чество строк, объединяет их в одну длинную строку и
+// возвращает ее.
+
+// function combineStrings(...strings: string[]): string {
+//   return strings.join('');
+// }
+
+// const string1: string = 'Привет, ';
+// const string2: string = 'мир!';
+// const string3: string = 'Как дела?';
+
+// const combinedString: string = combineStrings(string1, string2, string3);
+// console.log(combinedString); // Привет, мир!Как дела?
+
+// Написать функцию – калькулятор. Функция принимает
+// строку с примером, определяет, какое действие необходимо
+// выполнить (+ - * /), переводит операнды в числа, решает
+// пример и возвращает результат.
+
+// function calculator(expression: string): number {
+//   const operators = ['+', '-', '*', '/'];
+//   let operator: string = '';
+//   let num1: number = 0;
+//   let num2: number = 0;
+
+//   for (const op of operators) {
+//       if (expression.includes(op)) {
+//           operator = op;
+//           break;
+//       }
+//   }
+
+//   if (operator === '') {
+//       return NaN;
+//   }
+
+//   const operands = expression.split(operator).map((operand) => parseFloat(operand.trim()));
+
+//   num1 = operands[0];
+//   num2 = operands[1];
+
+//   switch (operator) {
+//       case '+':
+//           return num1 + num2;
+//       case '-':
+//           return num1 - num2;
+//       case '*':
+//           return num1 * num2;
+//       case '/':
+//           if (num2 === 0) {
+//               return NaN;
+//           }
+//           return num1 / num2;
+//       default:
+//           return NaN;
+//   }
+// }
+
+// const expression1: string = '10 + 5';
+// const expression2: string = '15 - 6';
+// const expression3: string = '8 * 4';
+// const expression4: string = '20 / 4';
+
+// console.log(calculator(expression1)); // 15
+// console.log(calculator(expression2)); // 9
+// console.log(calculator(expression3)); // 32
+// console.log(calculator(expression4)); // 5
+
+// Написать функцию, которая получает url и выводит под-
+// робную информацию о нем.
+// Например: url “https://itstep.org/ua/about”, информация
+// “протокол: https, домен: itstep.org, путь: /ua/about”.
+
+// function parseUrl(url: string): void {
+//   const urlPattern = /^(https?):\/\/([a-z0-9.-]+)(\/.*)$/;
+//   const match = url.match(urlPattern);
+
+//   if (match) {
+//       const protocol = match[1];
+//       const domain = match[2];
+//       const path = match[3];
+
+//       console.log(`URL: ${url}`);
+//       console.log(`Протокол: ${protocol}`);
+//       console.log(`Домен: ${domain}`);
+//       console.log(`Путь: ${path}`);
+//   } else {
+//       console.log('Некорректный URL');
+//   }
+// }
+
+// const url1: string = 'https://itstep.org/ua/about';
+// const url2: string = 'http://www.example.com/contact';
+
+// parseUrl(url1);
+// parseUrl(url2);
+
+// Написать функцию, которая принимает строку и раздели-
+// тель и возвращает массив подстрок, разбитых с помощью
+// указанного разделителя.
+// Например: строка “10/08/2020”, разделитель “/”, результат:
+// “10”, “08”, “2020”.
+// Выполняя задание, не используйте функцию split().
+
+// function splitString(str: string, separator: string): string[] {
+//   const result: string[] = [];
+//   let currentSubstring: string = '';
+
+//   for (let i = 0; i < str.length; i++) {
+//       if (str[i] === separator) {
+//           result.push(currentSubstring);
+//           currentSubstring = '';
+//       } else {
+//           currentSubstring += str[i];
+//       }
+//   }
+
+//   if (currentSubstring !== '') {
+//       result.push(currentSubstring);
+//   }
+
+//   return result;
+// }
+
+// const inputString: string = '10/08/2020';
+// const separator: string = '/';
+// const substrings: string[] = splitString(inputString, separator);
+
+// console.log(substrings);
+
+// Написать функцию вывода текста по заданному шаблону.
+// Функция принимает первым параметром шаблон, в тексте
+// которого может использоваться %, после символа % ука-
+// зывается индекс входного параметра. При выводе вместо
+// %индекс необходимо вывести значение соответствующего
+// входного параметра.
+// Например: print(“Today is %1 %2.%3.%4”, “Monday”, 10,
+// 8, 2020) должна вывести “Today is Monday 10.8.2020”.
+
+// function print(template: string, ...values: any[]): void {
+//   let result: string = template;
+
+//   for (let i = 0; i < values.length; i++) {
+//       const placeholder = new RegExp(`%${i + 1}`, 'g');
+//       result = result.replace(placeholder, values[i]);
+//   }
+
+//   console.log(result);
+// }
+
+// print('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020);

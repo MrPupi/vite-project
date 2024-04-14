@@ -2,7 +2,7 @@ body {
   background-color: rgb(25, 25, 25);
   select {
     margin-left: 15px;
-    width: 73%;
+    width: 87%;
   }
   #main {
     background-color: rgb(15, 15, 15);
@@ -53,6 +53,9 @@ body {
       padding: 20px;
       border: 2px azure solid;
       border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     input {
       margin: 15px;
