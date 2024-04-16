@@ -1699,3 +1699,64 @@ cerv.oninput = function () {
 // }
 
 // print('Today is %1 %2.%3.%4', 'Monday', 10, 8, 2020);
+
+// Написать функцию, которая проверяет, является ли пере-
+// данная строка палиндромом.
+
+// function getTruePalin(str:string) {
+//   for(let i=0, j=str.length-1; i<j; i++, j--) {
+//     if(str[i] !== str[j]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// console.log(getTruePalin('abba'))
+
+// Написать функцию, которая считает количество слов в
+// предложении.
+
+// function getValue(str:string) {
+//   const arr = str.split(' ');
+//   return arr.length;
+// }
+
+// const result = getValue('crambole avokado')
+// console.log(result)
+
+// Написать функцию, которая возвращает самое длинное
+// слово из предложения.
+
+// ! надо вернуться к этой функции чуть позже
+
+// function getLonger(str:string) {
+//   const noP = str.split(' ')
+//   if(noP.slice(0,5).join('').length < noP.slice(5).join('').length) {
+//     const result = str.substring(0,5)
+//     console.log(result)
+//   } else {
+//     const result = str.substring(5)
+//     console.log(result)
+//   }
+// }
+
+// getLonger('abbab abbabba')
+
+// Написать функцию, которая считает среднюю длину слова
+// в предложении.
+
+// ! работает некорректно, надо исправить на вычисление С.А. All(слов) в предложения
+
+function getAverage(str:string) {
+  const noP = str.split(' ')
+  let sum = 0
+  for(let i=0; i<noP.length; i++) {
+   console.log(sum += noP[i].length)
+  }
+  console.log(sum/noP.length)
+  // return sum/noP.length
+}
+
+getAverage('Шла Наташа по шоссе и сосала сушку')
+
