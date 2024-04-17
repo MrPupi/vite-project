@@ -104,3 +104,71 @@ div {
     box-shadow: 0 0 20px red;
   }
 }
+
+#dz_pz {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(15, 15, 15);
+  height: max-content;
+  width: max-content;
+  padding: 60px;
+  margin: 50px auto;
+  border: 4px beige solid;
+  border-radius: 20px;
+}
+
+#pz1, #pz2, #pz3 {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 40px;
+  background-color: rgb(20, 20, 20);
+  height: max-content;
+  width: max-content;
+  border: 2px beige solid;
+  border-radius: 10px;
+}
+
+hr {
+  width: 100%;
+  margin: 14px 0;
+}
+
+// #first, #second, #third, #btn  {
+//   padding: 10px;
+//   font-size: 22px;
+//   width: max-content;
+//   background-color: rgb(20, 20, 20);
+//   border: 2px orange solid;
+//   border-radius: 5px;
+//   color:azure;
+// }
+
+.inputs {
+  padding: 10px;
+  font-size: 22px;
+  width: max-content;
+  background-color: rgb(20, 20, 20);
+  border: 2px orange solid;
+  border-radius: 5px;
+  color:azure;
+}
+.buttons {
+  border: 4px solid orangered;
+  padding: 10px;
+  font-size: 22px;
+  width: max-content;
+  background-color: rgb(20, 20, 20);
+  border-radius: 5px;
+  color:azure;
+  margin-inline-start: 90px;
+}
+
+.inputs::placeholder {
+  color: azure;
+}
+
+// #btn {
+//  border: 4px solid orangered;
+// }
+

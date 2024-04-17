@@ -1768,7 +1768,7 @@ cerv.oninput = function () {
 // рой больше символов, чем в первой; или 0 – если строки
 // одинаковой длины.
 
-const mainDiv = document.getElementById('pz1') as HTMLDivElement
+// const mainDiv = document.getElementById('pz1') as HTMLDivElement
 
 const input1 = document.getElementById('first') as HTMLInputElement
 const input2 = document.getElementById('second') as HTMLInputElement
@@ -1777,37 +1777,74 @@ const output = document.getElementById('third') as HTMLOutputElement
 
 const btnResult = document.getElementById('btn') as HTMLButtonElement
 
-mainDiv.style.setProperty('background-color', 'red');
-mainDiv.setAttribute('style','background-color: red;');
-mainDiv.style.width = '400px';
-mainDiv.style.height = '400px';
-let result: number|string = '';
+let result: number|string|boolean = '';
 function comparisonStrings(str1:string, str2:string) {
   if(str1.length > str2.length) {
-    return result = 1
+    return result = 'Первая строка больше'
   } else if (str2.length > str1.length) {
-    return result = -1
+    return result = 'Вторая строка больше'
   } else {
-    return result = 0
+    return result = 'Обе Строки равны'
   }
 }
 btnResult.addEventListener('click', function() {
    result = comparisonStrings(input1.value, input2.value)
-  output.textContent = result as unknown as string
-  console.log('оно работает')
+  output.value = result as unknown as string
+  // console.log('оно работает')
 })
 
 comparisonStrings('adadadaf', 'adafa')
 
-// function comparisonStrings(str1:string, str2:string) {
-//   let result:number= 0
-//   if(str1.length > str2.length) {
-//     return console.log(result+=1)
-//   } else if(str1.length<str2.length) {
-//     return console.log(result-=1)
-//   } else {
-//     return console.log(result) 
-//   }
-// }
+// * pz2 функция переводящая в верхний первую букву в слове
 
-// comparisonStrings('adadadaf', 'adafa')
+const inputWord = document.getElementById('four')as HTMLInputElement
+const outputWord = document.getElementById('five')as HTMLOutputElement
+const btnTrans = document.getElementById('btn_2')as HTMLButtonElement
+
+let transWord: number|string|boolean
+
+function getCapitalize(str:string):string {
+  return transWord = str.charAt(0).toUpperCase() + str.slice(1)
+ }
+ 
+ btnTrans.addEventListener('click', function() {
+  result = getCapitalize(inputWord.value)
+  outputWord.value = transWord as unknown as string
+
+ })
+
+// * pz3 функция считает количество гласных в полученной строке
+
+// ? надо исправить ошибки но код работает прекрасно
+
+const inputCalculate = document.getElementById('six');
+const outputCalculate = document.getElementById('seven');
+const btnCalculate = document.getElementById('btn_3');
+const rusLower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
+const rusUpper = rusLower.toUpperCase();
+const enLower = 'abcdefghijklmnopqrstuvwxyz';
+const enUpper = enLower.toUpperCase();
+const rus = rusLower + rusUpper;
+const en = enLower + enUpper;
+
+function countVowels(str) {
+  const vowelsEn = ['a', 'e', 'i', 'o', 'u', 'y'];
+  const vowelsRu = ['а', 'о', 'у', 'ы', 'э', 'е', 'ё', 'и', 'ю', 'я'];
+  let count = 0;
+  
+  for (const char of str.toLowerCase()) {
+    if (en.includes(char) && vowelsEn.includes(char)) {
+      count++;
+    } else if (rus.includes(char) && vowelsRu.includes(char)) {
+      count++;
+    }
+  }
+  
+  return count;
+}
+
+btnCalculate.addEventListener('click', function() {
+  const inputValue = inputCalculate.value
+  const vowelCount = countVowels(inputValue);
+  outputCalculate.value = vowelCount;
+});

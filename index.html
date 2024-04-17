@@ -1,17 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Podkova:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Podkova:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Vite + TS</title>
     <style>
       * {
-        font-family: "Podkova", serif;
+        font-family: 'Podkova', serif;
         font-optical-sizing: auto;
         font-weight: 500;
         font-style: normal;
@@ -25,7 +28,6 @@
     </style>
   </head>
   <body>
-
     <div id="main">
       <div id="uerg">
         <div class="conv">
@@ -61,27 +63,51 @@
     </div>
 
     <p>
-      <br>
+      <br />
     </p>
 
     <div id="dz_pz">
       <div id="pz1">
+        <span> </span>
         <div class="pz1">
-          <input type="text" id="first">
-          <input type="text" id="second">
+          <input type="text" id="first" placeholder="Первая строка" class="inputs" />
+          <p />
+          <input class="inputs" type="text" id="second" placeholder="Вторая строка" />
         </div>
-        <br>
+        <br />
+        <hr />
+        <br />
         <div class="pz1">
-          <input type="text" id="third">
-        </div>
-        <div class="pz1">
-          <button id="btn">
-            Compare
-          </button>
+          <input class="inputs" type="text" id="third" placeholder="Результат сравнения" />
+          <hr />
+          <button id="btn" class="buttons">Compare</button>
         </div>
       </div>
-      <div></div>
-      <div></div>
+
+      <div id="pz2">
+        <div class="pz2">
+          <input type="text" class="inputs" id="four" placeholder="Введите слово">
+        </div>
+        <hr />
+        <div class="pz2">
+          <input type="text" class="inputs" id="five" placeholder="Изменённое слово">
+        </div>
+        <hr />
+        <button id="btn_2" class="buttons">Translate</button>
+      </div>
+
+      <div id="pz3">
+        <div class="pz3">
+          <input type="text" class="inputs" id="six" placeholder="Введите слово/предложение">
+        </div>
+        <hr />
+        <div class="pz3">
+          <input type="text" class="inputs" id="seven" placeholder="Количество гласных">
+        </div>
+        <hr />
+        <button id="btn_3" class="buttons">Calculate</button>
+      </div>
+      </div>
     </div>
 
     <!-- <div class="snake">
@@ -90,21 +116,47 @@
 
     <script type="module" src="/src/main.ts"></script>
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-      m[i].l=1*new Date();
-      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script type="text/javascript">
+      (function (m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function () {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+          if (document.scripts[j].src === r) {
+            return;
+          }
+        }
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(
+        window,
+        document,
+        'script',
+        'https://mc.yandex.ru/metrika/tag.js',
+        'ym'
+      );
 
-      ym(96816126, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true,
-          webvisor:true
+      ym(96816126, 'init', {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
       });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/96816126" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript
+      ><div>
+        <img
+          src="https://mc.yandex.ru/watch/96816126"
+          style="position: absolute; left: -9999px"
+          alt=""
+        /></div
+    ></noscript>
     <!-- /Yandex.Metrika counter -->
   </body>
 </html>
