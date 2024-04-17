@@ -1729,21 +1729,21 @@ cerv.oninput = function () {
 // слово из предложения.
 
 // ! надо вернуться к этой функции чуть позже
-// ! я не опнимаю почему оно работает не корректно но итоговый результат такой какой и нужен
+// ! я не опнимаю почему оно работает некорректно но итоговый результат такой какой и нужен
 // ! пожалуй оставлю все как есть
 
-function getLonger(str:string) {
-  const noP = str.split(' ')
-  if(noP.slice(0,5).join('').length <= noP.slice(5).join('').length) {
-    const result = str.substring(0,5)
-    console.log(result)
-  } else {
-    const result = str.substring(5)
-    console.log(result)
-  }
-}
+// function getLonger(str:string) {
+//   const noP = str.split(' ')
+//   if(noP.slice(0,5).join('').length <= noP.slice(5).join('').length) {
+//     const result = str.substring(0,5)
+//     console.log(result)
+//   } else {
+//     const result = str.substring(5)
+//     console.log(result)
+//   }
+// }
 
-getLonger('abbab abbabba')
+// getLonger('abbab abbabba')
 
 // Написать функцию, которая считает среднюю длину слова
 // в предложении.
@@ -1761,3 +1761,53 @@ getLonger('abbab abbabba')
 
 // getAverage('Шла Наташа по шоссе и сосала сушку')
 
+
+// Написать функцию, которая принимает 2 строки и срав-
+// нивает их длину. Функция возвращает 1, если в первой
+// строке больше символов, чем во второй; -1 – если во вто-
+// рой больше символов, чем в первой; или 0 – если строки
+// одинаковой длины.
+
+const mainDiv = document.getElementById('pz1') as HTMLDivElement
+
+const input1 = document.getElementById('first') as HTMLInputElement
+const input2 = document.getElementById('second') as HTMLInputElement
+
+const output = document.getElementById('third') as HTMLOutputElement
+
+const btnResult = document.getElementById('btn') as HTMLButtonElement
+
+mainDiv.style.setProperty('background-color', 'red');
+mainDiv.setAttribute('style','background-color: red;');
+mainDiv.style.width = '400px';
+mainDiv.style.height = '400px';
+let result: number|string = '';
+function comparisonStrings(str1:string, str2:string) {
+  if(str1.length > str2.length) {
+    return result = 1
+  } else if (str2.length > str1.length) {
+    return result = -1
+  } else {
+    return result = 0
+  }
+}
+btnResult.addEventListener('click', function() {
+   result = comparisonStrings(input1.value, input2.value)
+  output.textContent = result as unknown as string
+  console.log('оно работает')
+})
+
+comparisonStrings('adadadaf', 'adafa')
+
+// function comparisonStrings(str1:string, str2:string) {
+//   let result:number= 0
+//   if(str1.length > str2.length) {
+//     return console.log(result+=1)
+//   } else if(str1.length<str2.length) {
+//     return console.log(result-=1)
+//   } else {
+//     return console.log(result) 
+//   }
+// }
+
+// comparisonStrings('adadadaf', 'adafa')
