@@ -1729,34 +1729,35 @@ cerv.oninput = function () {
 // слово из предложения.
 
 // ! надо вернуться к этой функции чуть позже
+// ! я не опнимаю почему оно работает не корректно но итоговый результат такой какой и нужен
+// ! пожалуй оставлю все как есть
 
-// function getLonger(str:string) {
-//   const noP = str.split(' ')
-//   if(noP.slice(0,5).join('').length < noP.slice(5).join('').length) {
-//     const result = str.substring(0,5)
-//     console.log(result)
-//   } else {
-//     const result = str.substring(5)
-//     console.log(result)
-//   }
-// }
+function getLonger(str:string) {
+  const noP = str.split(' ')
+  if(noP.slice(0,5).join('').length <= noP.slice(5).join('').length) {
+    const result = str.substring(0,5)
+    console.log(result)
+  } else {
+    const result = str.substring(5)
+    console.log(result)
+  }
+}
 
-// getLonger('abbab abbabba')
+getLonger('abbab abbabba')
 
 // Написать функцию, которая считает среднюю длину слова
 // в предложении.
 
 // ! работает некорректно, надо исправить на вычисление С.А. All(слов) в предложения
 
-function getAverage(str:string) {
-  const noP = str.split(' ')
-  let sum = 0
-  for(let i=0; i<noP.length; i++) {
-   console.log(sum += noP[i].length)
-  }
-  console.log(sum/noP.length)
-  // return sum/noP.length
-}
+// function getAverage(str:string) {
+//   const noP = str.split(' ')
+//   let sum = 0
+//   for(let i=0; i<noP.length; i++) {
+//    return sum += noP[i].length
+//   }
+//   console.log(sum/noP.length)
+// }
 
-getAverage('Шла Наташа по шоссе и сосала сушку')
+// getAverage('Шла Наташа по шоссе и сосала сушку')
 
