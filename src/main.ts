@@ -1848,3 +1848,14 @@ btnCalculate.addEventListener('click', function() {
   const vowelCount = countVowels(inputValue);
   outputCalculate.value = vowelCount;
 });
+
+// планая прокрутка
+const smooth1 = document.getElementById('b1')as HTMLLinkElement 
+const smooth2 = document.getElementById('b2')as HTMLLinkElement 
+const smooth3 = document.getElementById('b3')as HTMLLinkElement 
+
+function smoothScroll(){
+  document.querySelector('#pz1','#pz2','#pz3').scrollIntoView({
+      behavior: 'smooth'
+  });
+}
