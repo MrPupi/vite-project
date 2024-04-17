@@ -168,6 +168,15 @@ hr {
   color: azure;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: orange;
+  border-radius: 5px;
+}
+
 // #btn {
 //  border: 4px solid orangered;
 // }
