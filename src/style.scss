@@ -120,7 +120,7 @@ div {
   border-radius: 20px;
 }
 
-#pz1, #pz2, #pz3 {
+#pz1, #pz2, #pz3, #pz4_1 {
   display: flex;
   flex-direction: column;
   margin: 20px;
@@ -130,6 +130,7 @@ div {
   width: max-content;
   border: 2px beige solid;
   border-radius: 10px;
+  scroll-behavior: smooth;
 }
 
 hr {
@@ -155,9 +156,34 @@ hr {
   border: 2px orange solid;
   border-radius: 5px;
   color:azure;
+  transition: 0.25s;
+}
+.inputs:hover {
+  border: 2px orangered solid;
+  box-shadow: 0px 6px 10px orange;
+  transition: 0.25s;
+}
+.inputs[type=text]:focus {
+  outline: none;
+  border-color: aqua;
+  box-shadow: 0px 6px 10px aqua;
+}
+// .inputs:user-invalid {
+//   outline: none;
+//   border-color: red;
+//   box-shadow: 0px 6px 10px red;
+// }
+.inputs::placeholder {
+  color: azure;
+}
+.zag {
+  color: azure;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 .buttons {
-  border: 4px solid orangered;
+  border: 4px solid orange;
   padding: 10px;
   font-size: 22px;
   width: max-content;
@@ -165,12 +191,18 @@ hr {
   border-radius: 5px;
   color:azure;
   margin-inline-start: 90px;
+  transition: 0.25s;
 }
-
-.inputs::placeholder {
-  color: azure;
+// .buttons:active {
+//  border-color: aqua;
+//  box-shadow: 0px 6px 10px aqua;
+// }
+.buttons:hover {
+  scale: 1.1;
+  border: 4px solid orangered;
+  box-shadow: 0px 6px 10px orange;
+  transition: 0.25s;
 }
-
 ::-webkit-scrollbar {
   width: 8px;
 }

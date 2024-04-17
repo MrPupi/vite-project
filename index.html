@@ -1,169 +1,224 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Podkova:wght@400..800&display=swap"
-      rel="stylesheet"
-    />
-    <title>Vite + TS</title>
-    <style>
-      * {
-        font-family: 'Podkova', serif;
-        font-optical-sizing: auto;
-        font-weight: 500;
-        font-style: normal;
-      }
-      #score {
-        width: 100px;
-        height: 100px;
-        background-color: beige;
-        margin: 50px auto;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- <div id="navig">
-      <nav>
-        <li><a onclick="smoothScroll()" href="#pz1" id="b1">Practice One</a></li>
-        <li><a onclick="smoothScroll()" href="#pz2" id="b2">Practice Two</a></li>
-        <li><a onclick="smoothScroll()" href="#pz3" id="b3">Practice Three</a></li>
-      </nav>
-    </div> -->
-    <div id="main">
-      <div id="uerg">
-        <div class="conv">
-          <span>USD in RUB</span>
-          <div class="empty" data-value="USD">--.--</div>
-        </div>
-        <div class="conv">
-          <span>EUR in RUB</span>
-          <div class="empty" data-value="EUR">--.--</div>
-        </div>
-        <div class="conv">
-          <span>GBP in RUB</span>
-          <div class="empty" data-value="GBP">--.--</div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./dist/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200..800&family=Podkova:wght@400..800&display=swap"
+    rel="stylesheet" />
+  <title>Vite + TS</title>
+  <style>
+    * {
+      font-family: 'Podkova', serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    #score {
+      width: 100px;
+      height: 100px;
+      background-color: beige;
+      margin: 50px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navig">
+    <nav>
+      <li><a href="#dz_pz" id="b1" onclick="smoothScroll('#dz_pz')">Practice One</a></li>
+      <li><a href="#pz1" id="b2" onclick="smoothScroll('#pz1')">Practice Two</a></li>
+      <li><a href="#pz2" id="b3" onclick="smoothScroll('#pz2')">Practice Three</a></li>
+    </nav>
+  </div>
+  <div id="main">
+    <div id="uerg">
+      <div class="conv">
+        <span>USD in RUB</span>
+        <div class="empty" data-value="USD">--.--</div>
       </div>
-      <div id="conv">
-        <select id="select">
-          <option>RUB</option>
-          <!-- <option value="USD">USD</option>
+      <div class="conv">
+        <span>EUR in RUB</span>
+        <div class="empty" data-value="EUR">--.--</div>
+      </div>
+      <div class="conv">
+        <span>GBP in RUB</span>
+        <div class="empty" data-value="GBP">--.--</div>
+      </div>
+    </div>
+    <div id="conv">
+      <select id="select">
+        <option>RUB</option>
+        <!-- <option value="USD">USD</option>
             <option value="EUR">EUR</option>
             <option value="GBP">GBP</option> -->
-          <input type="number" id="cerv" name="dollar" data-value="Current" />
-        </select>
-        <select id="select1">
-          <option id="option" value="USD">USD</option>
-          <option id="option1" value="EUR">EUR</option>
-          <option id="option2" value="GBP">GBP</option>
-          <input type="number" id="resl" name="euro" data-value="Result" />
-        </select>
-        <!-- <button onclick="click">Converted</button> -->
-      </div>
-      <h1 id="text">converted center</h1>
+        <input type="number" id="cerv" name="dollar" data-value="Current" />
+      </select>
+      <select id="select1">
+        <option id="option" value="USD">USD</option>
+        <option id="option1" value="EUR">EUR</option>
+        <option id="option2" value="GBP">GBP</option>
+        <input type="number" id="resl" name="euro" data-value="Result" />
+      </select>
+      <!-- <button onclick="click">Converted</button> -->
     </div>
+    <h1 id="text">converted center</h1>
+  </div>
 
-    <p>
+  <p>
+    <br />
+  </p>
+
+  <div id="dz_pz">
+    <h1 class="zag">Practice</h1>
+    <div id="pz1">
+      <div class="pz1">
+        <input type="text" id="first" placeholder="Первая строка" class="inputs" />
+        <p />
+        <input class="inputs" type="text" id="second" placeholder="Вторая строка" />
+      </div>
       <br />
-    </p>
-
-    <div id="dz_pz">
-      <div id="pz1">
-        <span> </span>
-        <div class="pz1">
-          <input type="text" id="first" placeholder="Первая строка" class="inputs" />
-          <p />
-          <input class="inputs" type="text" id="second" placeholder="Вторая строка" />
-        </div>
-        <br />
+      <hr />
+      <br />
+      <div class="pz1">
+        <input class="inputs" type="text" id="third" placeholder="Результат сравнения" />
         <hr />
-        <br />
-        <div class="pz1">
-          <input class="inputs" type="text" id="third" placeholder="Результат сравнения" />
-          <hr />
-          <button id="btn" class="buttons">Compare</button>
-        </div>
-      </div>
-
-      <div id="pz2">
-        <div class="pz2">
-          <input type="text" class="inputs" id="four" placeholder="Введите слово">
-        </div>
-        <hr />
-        <div class="pz2">
-          <input type="text" class="inputs" id="five" placeholder="Изменённое слово">
-        </div>
-        <hr />
-        <button id="btn_2" class="buttons">Translate</button>
-      </div>
-
-      <div id="pz3">
-        <div class="pz3">
-          <input type="text" class="inputs" id="six" placeholder="Введите слово/предложение">
-        </div>
-        <hr />
-        <div class="pz3">
-          <input type="text" class="inputs" id="seven" placeholder="Количество гласных">
-        </div>
-        <hr />
-        <button id="btn_3" class="buttons">Calculate</button>
-      </div>
+        <button id="btn" class="buttons">Compare</button>
       </div>
     </div>
 
-    <!-- <div class="snake">
+    <div id="pz2">
+      <div class="pz2">
+        <input type="text" class="inputs" id="four" placeholder="Введите слово">
+      </div>
+      <hr />
+      <div class="pz2">
+        <input type="text" class="inputs" id="five" placeholder="Изменённое слово">
+      </div>
+      <hr />
+      <button id="btn_2" class="buttons">Translate</button>
+    </div>
+
+    <div id="pz3">
+      <div class="pz3">
+        <input type="text" class="inputs" id="six" placeholder="Введите слово/предложение">
+      </div>
+      <hr />
+      <div class="pz3">
+        <input type="text" class="inputs" id="seven" placeholder="Количество гласных">
+      </div>
+      <hr />
+      <button id="btn_3" class="buttons">Calculate</button>
+    </div>
+    <div id="pz4">
+      <div class="pz4" style="border: 3px beige solid; border-radius: 10px;">
+        <h1 class="zag">
+          Бан-лист:
+          <p style="max-width: 320px; margin: 50px auto; padding: 0;">
+            100% бесплатно
+            <br>
+            Увеличение продаж
+            <br>
+            Только сегодня
+            <br>
+            Не удаляйте
+            <br>
+            ХХХ
+          </p>
+        </h1>
+        <div id="pz4_1">
+          <div class="pz4">
+            <input type="text" class="inputs" id="eigth" placeholder="Введите слово/предложение">
+          </div>
+          <hr />
+          <div class="pz4">
+            <input type="text" class="inputs" id="nine" placeholder="Спам или нет">
+          </div>
+          <hr />
+          <button id="btn_4" class="buttons">Compare</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+  <!-- <div class="snake">
       <canvas id="game" width="608" height="608" margin="50px auto"></canvas>
     </div> -->
 
-    <script type="module" src="/src/main.ts"></script>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
-        }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        'script',
-        'https://mc.yandex.ru/metrika/tag.js',
-        'ym'
-      );
+  <script type="module" src="/src/main.ts"></script>
+  <script>
+    function smoothScroll(target) {
+      var targetElement = document.querySelector(target);
+      var targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+      var startPosition = window.pageYOffset;
+      var distance = targetPosition - startPosition;
+      var duration = 1000; // время прокрутки в миллисекундах
+      var startTime = null;
 
-      ym(96816126, 'init', {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true
-      });
-    </script>
-    <noscript
-      ><div>
-        <img
-          src="https://mc.yandex.ru/watch/96816126"
-          style="position: absolute; left: -9999px"
-          alt=""
-        /></div
-    ></noscript>
-    <!-- /Yandex.Metrika counter -->
-  </body>
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+      }
+
+      function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+      }
+
+      requestAnimationFrame(animation);
+    }
+  </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+      m[i] =
+        m[i] ||
+        function () {
+          (m[i].a = m[i].a || []).push(arguments);
+        };
+      m[i].l = 1 * new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) {
+          return;
+        }
+      }
+      (k = e.createElement(t)),
+        (a = e.getElementsByTagName(t)[0]),
+        (k.async = 1),
+        (k.src = r),
+        a.parentNode.insertBefore(k, a);
+    })(
+      window,
+      document,
+      'script',
+      'https://mc.yandex.ru/metrika/tag.js',
+      'ym'
+    );
+
+    ym(96816126, 'init', {
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      webvisor: true
+    });
+  </script>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/96816126" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+  <!-- /Yandex.Metrika counter -->
+</body>
+
 </html>

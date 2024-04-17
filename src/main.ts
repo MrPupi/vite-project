@@ -1367,6 +1367,7 @@ cerv.oninput = function () {
 
 // ! ОН НЕ РАБОТАЕТ,
 //? пока что
+// * уже работает
 
 // Написать функцию для проверки спама в переданной
 // строке. Функция возвращает true, если строка содержит
@@ -1375,30 +1376,29 @@ cerv.oninput = function () {
 // Функция должна быть нечувствительна к регистру.
 
 // interface Spam {
-//   str: { name: string, value: boolean }[];
+//   name: string;
+//   value: boolean;
 // }
 
-// const arrOfWords: Spam = {
-//   str: [
-//     { name: '100% бесплатно', value: true },
-//     { name: 'увеличение продаж', value: true },
-//     { name: 'только сегодня', value: true },
-//     { name: 'не удаляйте', value: true },
-//     { name: 'xxx', value: true }
-//   ]
-// };
+// const arrOfWords: Spam[] = [
+//   { name: '100% бесплатно', value: true },
+//   { name: 'увеличение продаж', value: true },
+//   { name: 'только сегодня', value: true },
+//   { name: 'не удаляйте', value: true },
+//   { name: 'xxx', value: true }
+// ];
 
-// function checkForSpam(str: Spam) {
-//   const lowerCaseStr: string = str.name.toLowerCase();
-//   for (const spamWord of arrOfWords) {
-//       if (lowerCaseStr.includes(spamWord.toLowerCase())) {
-//           return true;
-//       }
+// function checkForSpam(str: string, arr: Spam[]) {
+//   const lowerCaseStr: string = str.toLowerCase();
+//   for (const spamWord of arr) {
+//     if (lowerCaseStr.includes(spamWord.name.toLowerCase())) {
+//       return true;
+//     }
 //   }
 //   return false;
 // }
 
-// checkForSpam(arrOfWords)
+// console.log(checkForSpam('только завтра', arrOfWords));
 
 // Написать функцию сокращения строки. Функция прини- 
 // мает строку и ее максимальную длину. Если длина строки 
@@ -1816,10 +1816,11 @@ function getCapitalize(str:string):string {
 // * pz3 функция считает количество гласных в полученной строке
 
 // ? надо исправить ошибки но код работает прекрасно
+// * пометка все не критические(а других и не было) ошибки исправленны 
 
-const inputCalculate = document.getElementById('six');
-const outputCalculate = document.getElementById('seven');
-const btnCalculate = document.getElementById('btn_3');
+const inputCalculate = document.getElementById('six')as HTMLInputElement;
+const outputCalculate = document.getElementById('seven')as HTMLOutputElement;
+const btnCalculate = document.getElementById('btn_3')as HTMLButtonElement;
 const rusLower = 'абвгдеёжзийклмнопрстуфхцчшщъыьэюя';
 const rusUpper = rusLower.toUpperCase();
 const enLower = 'abcdefghijklmnopqrstuvwxyz';
@@ -1827,7 +1828,7 @@ const enUpper = enLower.toUpperCase();
 const rus = rusLower + rusUpper;
 const en = enLower + enUpper;
 
-function countVowels(str) {
+function countVowels(str:string) {
   const vowelsEn = ['a', 'e', 'i', 'o', 'u', 'y'];
   const vowelsRu = ['а', 'о', 'у', 'ы', 'э', 'е', 'ё', 'и', 'ю', 'я'];
   let count = 0;
@@ -1846,17 +1847,46 @@ function countVowels(str) {
 btnCalculate.addEventListener('click', function() {
   const inputValue = inputCalculate.value
   const vowelCount = countVowels(inputValue);
-  outputCalculate.value = vowelCount;
+  outputCalculate.value = vowelCount as unknown as string;
 });
+// * pz 4
+// * Написать функцию для проверки спама в переданной
+// * строке. Функция возвращает true, если строка содержит
+// * спам. Спамом считать следующие слова: 100% бесплатно,
+// * увеличение продаж, только сегодня, не удаляйте, ххх.
+// * Функция должна быть нечувствительна к регистру.
 
-// планая прокрутка
-// ! не работает надо доделать
-// const smooth1 = document.getElementById('b1')as HTMLLinkElement 
-// const smooth2 = document.getElementById('b2')as HTMLLinkElement 
-// const smooth3 = document.getElementById('b3')as HTMLLinkElement 
+const inputSpam = document.getElementById('eigth')as HTMLInputElement
+const outputSpam = document.getElementById('nine')as HTMLOutputElement
+const btnSpam = document.getElementById('btn_4')as HTMLButtonElement
 
-// function smoothScroll(){
-//   document.querySelector('#pz1','#pz2','#pz3').scrollIntoView({
-//       behavior: 'smooth'
-//   });
-// }
+interface Spam {
+  name: string;
+  value: boolean;
+}
+
+const arrOfWords: Spam[] = [
+  { name: '100% бесплатно', value: true },
+  { name: 'увеличение продаж', value: true },
+  { name: 'только сегодня', value: true },
+  { name: 'не удаляйте', value: true },
+  { name: 'xxx', value: true },
+  { name: 'ххх', value: true }
+];
+
+function checkForSpam(str: string, arr: Spam[]) {
+  const lowerCaseStr: string = str.toLowerCase();
+  let count = '';
+  for (const spamWord of arr) {
+    if (lowerCaseStr.includes(spamWord.name.toLowerCase())) {
+      return count = 'Вам бан';
+    } 
+  }
+  return count = 'Вы оправдали надежды';
+}
+
+btnSpam.addEventListener('click', function() {
+  const inputValue = inputSpam.value
+  const checkSpamWords = checkForSpam(inputValue, arrOfWords)
+  outputSpam.value = checkSpamWords as unknown as string
+})
