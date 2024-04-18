@@ -1768,8 +1768,6 @@ cerv.oninput = function () {
 // рой больше символов, чем в первой; или 0 – если строки
 // одинаковой длины.
 
-// const mainDiv = document.getElementById('pz1') as HTMLDivElement
-
 const input1 = document.getElementById('first') as HTMLInputElement
 const input2 = document.getElementById('second') as HTMLInputElement
 
@@ -1890,3 +1888,117 @@ btnSpam.addEventListener('click', function() {
   const checkSpamWords = checkForSpam(inputValue, arrOfWords)
   outputSpam.value = checkSpamWords as unknown as string
 })
+
+// * pz 5
+// Написать функцию сокращения строки. Функция прини-
+// мает строку и ее максимальную длину. Если длина строки
+// больше, чем максимальная, то необходимо отбросить
+// лишние символы, добавив вместо них троеточие.
+// Например: truncate(“Hello, world!”, 8) должна вернуть
+// “Hello...”.
+const inputTruncate = document.getElementById('ten')as HTMLInputElement
+const outputTruncate = document.getElementById('eleven')as HTMLOutputElement
+const btnTruncate = document.getElementById('btn_5')as HTMLButtonElement
+
+
+function truncate(str: string, maxLength=8): string {
+  str = str.trim()
+  if (str.length < maxLength) {
+      return str;
+  } else {
+      return str.slice(0, maxLength) + '...';
+  }
+}
+
+btnTruncate.addEventListener('click', function(){
+  const inputValue = inputTruncate.value
+  const getTruncate = truncate(inputValue)
+  outputTruncate.value = getTruncate 
+})
+
+// const inputString: string = "Hello, world!";
+// const truncatedString: string = truncate(inputString);
+// console.log(truncatedString);
+
+// * pz 6
+// Написать функцию, которая проверяет, является ли пере-
+// данная строка палиндромом.
+const inputCheck = document.getElementById('twelve')as HTMLInputElement
+const outputCheck = document.getElementById('thirtheen')as HTMLOutputElement
+const btnCheck = document.getElementById('btn_6')as HTMLButtonElement
+
+function getTruePalin(str:string) {
+  for(let i=0, j=str.length-1; i<j; i++, j--) {
+    if(str[i] !== str[j]) {
+      return 'Не палиндром';
+    }
+  }
+  return 'Палиндром';
+}
+
+btnCheck.addEventListener('click', function(){
+  const inputValue = inputCheck.value
+  const getCheck = getTruePalin(inputValue)
+  outputCheck.value = getCheck as unknown as string
+})
+
+// console.log(getTruePalin('abbaabad'))
+
+// * pz 7
+// Написать функцию, которая считает количество слов в
+// предложении.
+const inputSum = document.getElementById('firtheen')as HTMLInputElement
+const outputSum = document.getElementById('fifteen')as HTMLOutputElement
+const btnSum = document.getElementById('btn_7')as HTMLButtonElement
+
+function getValue(str:string) {
+  const arr = str.split(' ');
+  return arr.length;
+}
+
+btnSum.addEventListener('click', function(){
+  const inputValue = inputSum.value 
+  const getSum = getValue(inputValue)
+  outputSum.value = getSum as unknown as string
+})
+
+// const result = getValue('crambole avokado')
+// console.log(result)
+
+// * pz 8
+// Написать функцию, которая возвращает самое длинное
+// слово из предложения.
+const inputLonger = document.getElementById('sixteen')as HTMLInputElement
+const outputLonger = document.getElementById('seventeen')as HTMLOutputElement
+const btnLonger = document.getElementById('btn_8')as HTMLButtonElement
+
+function getLonger(arr:string[]) {
+ const firstEl = arr[0]
+ const secondEl = arr[1]
+ if(firstEl.length > secondEl.length) {
+  return firstEl
+ } else {
+  return secondEl
+ }
+}
+
+btnLonger.addEventListener('click', function(){
+  const inputValue = inputLonger.value 
+  const getFunctionLonger = getLonger(inputValue)
+  outputLonger.value = getFunctionLonger
+})
+
+// console.log(getLonger(['afgafпывпыфпфп','afgaffaa']))
+
+// function getLonger(str:string) {
+//   const noP = str.split(' ')
+//   if(noP.slice(0,5).join('').length <= noP.slice(5).join('').length) {
+//     const result = str.substring(0,5)
+//     console.log(result)
+//   } else {
+//     const result = str.substring(5)
+//     console.log(result)
+//   }
+// }
+
+// getLonger('abbab abbabba')
