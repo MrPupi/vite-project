@@ -1972,15 +1972,20 @@ const inputLonger = document.getElementById('sixteen')as HTMLInputElement
 const outputLonger = document.getElementById('seventeen')as HTMLOutputElement
 const btnLonger = document.getElementById('btn_8')as HTMLButtonElement
 
-function getLonger(arr:string[]) {
- const firstEl = arr[0]
- const secondEl = arr[1]
- if(firstEl.length > secondEl.length) {
-  return firstEl
- } else {
-  return secondEl
- }
+// type arrStr = string|string[]
+
+function getLonger(str:string) {
+ const words:string[] = str.split(' ')
+ let longestWord = ''
+  words.forEach((word) => {
+    if(word.length>longestWord.length) {
+      longestWord = word
+    }
+  });
+  console.log(longestWord)
+  return longestWord
 }
+
 
 btnLonger.addEventListener('click', function(){
   const inputValue = inputLonger.value 
@@ -1988,17 +1993,17 @@ btnLonger.addEventListener('click', function(){
   outputLonger.value = getFunctionLonger
 })
 
-// console.log(getLonger(['afgafпывпыфпфп','afgaffaa']))
+// * pz 9 
+// Написать функцию, которая считает среднюю длину слова
+// в предложении.
 
-// function getLonger(str:string) {
-//   const noP = str.split(' ')
-//   if(noP.slice(0,5).join('').length <= noP.slice(5).join('').length) {
-//     const result = str.substring(0,5)
-//     console.log(result)
-//   } else {
-//     const result = str.substring(5)
-//     console.log(result)
-//   }
-// }
+function getAverage(str:string) {
+  const noP = str.split(' ')
+  let sum = 0
+  for(let i=0; i<noP.length; i++) {
+   return sum += noP[i].length
+  }
+  console.log(sum/noP.length)
+}
 
-// getLonger('abbab abbabba')
+getAverage('Шла Наташа по шоссе и сосала сушку')
