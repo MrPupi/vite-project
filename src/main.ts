@@ -2008,18 +2008,3 @@ function getAverage(str:string) {
 
 getAverage('Шла Наташа по шоссе и сосала сушку')
 
-const pm = document.getElementById('pm')
-class PrintMachine {
-  fFamily: string
-  color: string
-  fSize: string
-  tag: 
-  constructor(fSize: string,color:string,fFamily:string) {
-    this.fSize = fSize
-    this.color = color
-    this.fFamily = fFamily
-  }
-  print(text:string) {
-
-  }
-}
