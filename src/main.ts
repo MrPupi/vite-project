@@ -1880,7 +1880,8 @@ function checkForSpam(str: string, arr: Spam[]) {
       return count = 'Вам бан';
     } 
   }
-  return count = 'Вы оправдали надежды';
+  count = 'Вы оправдали надежды' 
+  return count;
 }
 
 btnSpam.addEventListener('click', function() {
