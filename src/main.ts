@@ -2007,40 +2007,43 @@ function getAverage(str:string) {
 }
 
 getAverage('Шла Наташа по шоссе и сосала сушку')
-// ! надо доделать
-function twoSum(nums: number[], target: number): number[] {
-  let numMap = new Map
-  nums=[2,7,11,15]
-  target=9
-  for(let i = 0; i < nums.length; i++) {
-      let comp =  target - nums[i]
-      if(numMap.has(comp)) {
-          return [numMap.get(comp),i]
-      }
-      numMap.set(nums[i], i)
-  }
-};
-function sums(nums: number[], target: number): number[] {
-  let numMap = new Map
-  nums=[3,2,4]
-  target=6
-  for(let i = 0; i < nums.length; i++) {
-      let comp =  target - nums[i]
-      if(numMap.has(comp)) {
-          return [numMap.get(comp),i]
-      }
-      numMap.set(nums[i], i)
-  }
-};
-function sumums(nums: number[], target: number): number[] {
-  let numMap = new Map
-  nums=[3,3]
-  target=6
-  for(let i = 0; i < nums.length; i++) {
-      let comp =  target - nums[i]
-      if(numMap.has(comp)) {
-          return [numMap.get(comp),i]
-      }
-      numMap.set(nums[i], i)
-  }
-};
+// * работает
+// function twoSum(nums: number[], target: number): number[] {
+//   let numMap = new Map
+//   nums=[2,7,11,15]
+//   target=9
+//   for(let i = 0; i < nums.length; i++) {
+//       let comp =  target - nums[i]
+//       if(numMap.has(comp)) {
+//           return [numMap.get(comp),i]
+//       }
+//       numMap.set(nums[i], i)
+//   }
+// };
+// function sums(nums: number[], target: number): number[] {
+//   let numMap = new Map
+//   nums=[3,2,4]
+//   target=6
+//   for(let i = 0; i < nums.length; i++) {
+//       let comp =  target - nums[i]
+//       if(numMap.has(comp)) {
+//           return [numMap.get(comp),i]
+//       }
+//       numMap.set(nums[i], i)
+//   }
+// };
+// function sumums(nums: number[], target: number): number[] {
+//   let numMap = new Map
+//   nums=[3,3]
+//   target=6
+//   for(let i = 0; i < nums.length; i++) {
+//       let comp =  target - nums[i]
+//       if(numMap.has(comp)) {
+//           return [numMap.get(comp),i]
+//       }
+//       numMap.set(nums[i], i)
+//   }
+// };
+// console.log(twoSum([2,7,11,15], 9))
+// console.log(sums([3,3], 6))
+// console.log(sumums([3,2,4], 6))
